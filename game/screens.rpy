@@ -1,4 +1,4 @@
-﻿## Initialization
+## Initialization
 ################################################################################
 
 init offset = -1
@@ -148,11 +148,10 @@ style categorized_menu_button_text_italic is categorized_menu_button_text:
     italic True
 
 screen categorized_menu(menu_items, category_pane_space, option_list_space, category_length):
-    at categorized_menu_slide_in_right
     style_prefix "categorized_menu"
 
     #Just entered this menu so just need to list categories
-    fixed:
+    fixed at categorized_menu_slide_in_right:
         anchor (0, 0)
         pos (category_pane_space[0], category_pane_space[1])
         xsize category_pane_space[2]
@@ -220,7 +219,7 @@ screen categorized_menu(menu_items, category_pane_space, option_list_space, cate
     #Safely wrap this check so this screen cannot crash
     #If we have a selected category and need to display the options within it (if there are any)
     if menu_items.get(selected_category):
-        fixed:
+        fixed at categorized_menu_slide_in_right:
             area option_list_space
 
             bar:
