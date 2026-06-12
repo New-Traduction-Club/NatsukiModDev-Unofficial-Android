@@ -47,6 +47,18 @@ init -3 python:
     import store.jn_utils as jn_utils
     import webbrowser
 
+    for db_name in [
+        "_admission_database",
+        "_apology_database",
+        "_compliment_database",
+        "_event_database",
+        "_farewell_database",
+        "_greeting_database",
+        "_topic_database"
+    ]:
+        if not isinstance(getattr(store.persistent, db_name, None), dict):
+            setattr(store.persistent, db_name, dict())
+
     class JNTimeBlocks(Enum):
         early_morning = 1
         mid_morning = 2
@@ -647,7 +659,7 @@ init -3 python:
         if not silent:
             if jn_is_day():
                 renpy.play("mod_assets/buttons/sounds/button_click_day.ogg")
-            
+
             else:
                 renpy.play("mod_assets/buttons/sounds/button_click_night.ogg")
 
@@ -972,7 +984,7 @@ init -3 python:
     def jnGetDisplayableFromTags(tags):
         """
         Given a tag, returns the displayable corresponding to it.
-        
+
         IN:
             - tags - Str or tuple tags identifying the image
         OUT:
@@ -1245,7 +1257,7 @@ init -999 python in jn_utils:
         """
         Creates and starts a new, untracked background thread given a function and args that runs without blocking execution.
         This will not return a result, therefore only use this for things like void functions where no return is expected/needed.
-        
+
         IN:
             - function - the function to call in the new thread
             - args - parameters to be passed to the function; must be of type list or tuple
@@ -1297,7 +1309,7 @@ init -999 python in jn_utils:
             self.__args = args
             self.__running = False
             self.__thread = None
- 
+
         def getIsRunning(self):
             return self.__running
 
@@ -1305,7 +1317,7 @@ init -999 python in jn_utils:
             if not self.__running:
                 self.__running = True
 
-                # We pass a reference to the thread so any continuous loop can reference the running state 
+                # We pass a reference to the thread so any continuous loop can reference the running state
                 run_args = (self,) + self.__args
 
                 if len(self.__args) > 0:
@@ -1317,7 +1329,7 @@ init -999 python in jn_utils:
 
                 self.__thread.daemon = True
                 self.__thread.start()
-                
+
         def stop(self):
             if self.__running:
                 self.__running = False
@@ -1452,7 +1464,7 @@ init -100 python in jn_utils:
 
         else:
             return ["th", "st", "nd", "rd", "th"][min(value % 10, 4)]
-    
+
     def diceRoll(faces):
         """
         Returns True or False based on whether a roll with the given faces returns one.
@@ -2049,7 +2061,7 @@ transform JN_PULSE(time=1, wait=1.5):
     parallel:
         easeout_bounce 0.3 xalign 0.5 + 0.02 * time
         easeout_bounce 0.3 xalign 0.5 - 0.02 * time
-    
+
     ease 0.15 alpha 0
 
 # Vanilla resources from base DDLC
