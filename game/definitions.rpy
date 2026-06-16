@@ -46,6 +46,37 @@ init -3 python:
     import store.jn_affinity as jn_affinity
     import store.jn_utils as jn_utils
     import webbrowser
+    import sys as _sys
+    import __builtin__ as _builtin
+    _persistent_class = _sys.modules["renpy.persistent"].Persistent
+    _object_setattr = _builtin.object.__setattr__
+    _builtin_dict = _builtin.dict
+    del _sys
+    del _builtin
+
+    # hook persistent.__getattribute__ to automatically initialize custom database attributes
+    # as dictionaries if they are accessed but are not dicts (e.g. if they are None or invalid due to migration)
+    _original_persistent_getattribute = _persistent_class.__getattribute__
+    def _custom_persistent_getattribute(self, attr):
+        try:
+            val = _original_persistent_getattribute(self, attr)
+        except AttributeError:
+            if not attr.startswith("__") and (attr.endswith("_database") or attr.endswith("_db")):
+                val = dict()
+                _object_setattr(self, attr, val)
+                return val
+            raise
+
+        if not attr.startswith("__") and (attr.endswith("_database") or attr.endswith("_db")):
+            if not isinstance(val, dict):
+                if isinstance(val, _builtin_dict):
+                    val = dict(val)
+                else:
+                    val = dict()
+                _object_setattr(self, attr, val)
+                return val
+        return val
+    _persistent_class.__getattribute__ = _custom_persistent_getattribute
 
     for db_name in [
         "_admission_database",
@@ -56,7 +87,13 @@ init -3 python:
         "_greeting_database",
         "_topic_database"
     ]:
-        if not isinstance(getattr(store.persistent, db_name, None), dict):
+        val = getattr(store.persistent, db_name, None)
+        if val is None:
+            setattr(store.persistent, db_name, dict())
+        elif isinstance(val, _builtin_dict):
+            if not isinstance(val, dict):
+                setattr(store.persistent, db_name, dict(val))
+        else:
             setattr(store.persistent, db_name, dict())
 
     class JNTimeBlocks(Enum):
