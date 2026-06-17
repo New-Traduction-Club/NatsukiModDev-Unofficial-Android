@@ -824,6 +824,13 @@ screen quick_menu():
                 hover_sound gui.hover_sound
                 activate_sound gui.activate_sound
 
+            if renpy.android:
+                textbutton _("Hide"):
+                    text_style "quickmenu_text"
+                    action HideInterface()
+                    hover_sound gui.hover_sound
+                    activate_sound gui.activate_sound
+
 default quick_menu = True
 
 #style quick_button is default
