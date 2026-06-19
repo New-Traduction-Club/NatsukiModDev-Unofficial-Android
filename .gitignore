@@ -1,6 +1,9 @@
 game/dev/*
 game/saves/*
-game/*.rpyc
+*.rpyc
 *.rpa
 game/cache/
 log/
+log.txt
+traceback.txt
+errors.txt
