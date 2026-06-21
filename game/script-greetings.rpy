@@ -769,7 +769,7 @@ label greeting_love_plus_today_is_gonna_be_great:
     n 1unmbsledz "[player]!{w=1}{nw}"
     extend 3fchgnl " You're back,{w=0.3} finally!"
     n 3fchsml "Ehehe.{w=0.5}{nw}"
-    $ time_descriptor = "today" if jn_is_day() else "tonight"
+    $ time_descriptor = __("today") if jn_is_day() else __("tonight")
     extend 3uchgnleme " Now I {i}know{/i} [time_descriptor] is gonna be great!"
 
     return
@@ -1123,7 +1123,7 @@ init 5 python:
 label greeting_love_plus_spell_it_out:
     n 1ccsss "Heh.{w=0.75}{nw}"
     extend 2ccsbg " Well,{w=0.2} well."
-    $ time_descriptor = "today" if jn_is_day() else "tonight"
+    $ time_descriptor = __("today") if jn_is_day() else __("tonight")
     n 2fsqbg "Just look who decided to show their face [time_descriptor].{w=1}{nw}"
     extend 4fnmbg " Huh?"
     n 4fsqsm "..."
@@ -1160,7 +1160,7 @@ label greeting_affectionate_enamored_just_as_amazing:
     n 4unmajl "[player]!{w=0.75}{nw}"
     extend 4cchbgl " You're back!"
     n 3ccsssl "Heh."
-    $ time_descriptor = "today" if jn_is_day() else "tonight"
+    $ time_descriptor = __("today") if jn_is_day() else __("tonight")
     n 6ccsbgl "Let's make [time_descriptor] just as {i}amazing{/i} as me,{w=0.2} 'kay?{w=0.75}{nw}"
     extend 7fcssmledz " Ehehe."
 
@@ -1186,7 +1186,7 @@ label greeting_affectionate_enamored_couldnt_resist:
     n 3fcsctl "I knew you obviously just couldn't resist.{w=0.75}{nw}"
     extend 3fcssmledz " Ehehe."
     n 4tsqssl "So...{w=1}{nw}"
-    $ time_descriptor = "today" if jn_is_day() else "tonight"
+    $ time_descriptor = __("today") if jn_is_day() else __("tonight")
     extend 2fchbgl " what do you wanna do [time_descriptor]?"
 
     return
@@ -1231,7 +1231,7 @@ init 5 python:
 
 label greeting_affectionate_enamored_have_so_much_fun:
     n 4fchbgleme "Hey!{w=0.5} It's [player]!"
-    $ time_descriptor = "today" if jn_is_day() else "tonight"
+    $ time_descriptor = __("today") if jn_is_day() else __("tonight")
     n 7fcssml "We're gonna have {w=0.2}{i}so{/i}{w=0.2} much fun [time_descriptor]!{w=0.5}{nw}"
     extend 3fsqsml " Ehehe."
     n 3fchbgl "So!{w=0.2} What did you wanna talk about?"
@@ -1325,7 +1325,7 @@ init 5 python:
 
 label greeting_affectionate_enamored_good_taste:
     n 3fcsct "Oh?{w=0.75}{nw}"
-    $ time_descriptor = "today" if jn_is_day() else "tonight"
+    $ time_descriptor = __("today") if jn_is_day() else __("tonight")
     extend 3fsqbg " And just look who decided to drop into the clubroom [time_descriptor],{w=0.2} huh?"
     n 3fcssmesm "..."
     n 4tllbg "Well,{w=0.2} what can I say?"
@@ -1689,7 +1689,7 @@ label greeting_normal_some_notice:
     extend 2cslpo " Sheesh."
     n 1cslca "..."
     n 1cllaj "So...{w=1}{nw}"
-    $ time_descriptor = "today" if jn_is_day() else "tonight"
+    $ time_descriptor = __("today") if jn_is_day() else __("tonight")
     extend 2tllaj " what's new [time_descriptor],{w=0.5}{nw}"
     extend 2tnmbo " [player]?"
 
@@ -1719,7 +1719,7 @@ label greeting_normal_back_again:
     extend 3ccscalsbl " Obviously."
     n 3nlrbo "..."
     n 3ulraj "So...{w=1}{nw}"
-    $ time_descriptor = "today" if jn_is_day() else "tonight"
+    $ time_descriptor = __("today") if jn_is_day() else __("tonight")
     extend 3tnmbo " what have you got for me [time_descriptor],{w=0.2} [player]?"
 
     return
@@ -2083,7 +2083,7 @@ init 5 python:
             persistent._greeting_database,
             label="greeting_feeling_better_sick",
             unlocked=True,
-            category=["Admission"],
+            category=[__("Admission")],
             affinity_range=(jn_affinity.HAPPY, None),
             additional_properties={
                 "admission_type": jn_admissions.TYPE_SICK,
@@ -2244,7 +2244,7 @@ label greeting_feeling_better_sick:
                 else:
                     n 4ccsaj "...Okay,{w=0.2} look."
                     n 4cllajl "It's not that I don't enjoy your company,{w=0.5}{nw}"
-                    $ time_descriptor = "today" if jn_is_day() else "tonight"
+                    $ time_descriptor = __("today") if jn_is_day() else __("tonight")
                     extend 4cnmfll " or that I don't wanna see you [time_descriptor].{w=0.75}{nw}"
                     extend 3fcsemlsbr " O-{w=0.2}of course I do!{w=0.75}{nw}"
                     n 3csrcalsbr "You of all people should really {i}know{/i} that by now."
@@ -2295,7 +2295,7 @@ label greeting_feeling_better_sick:
                 n 5cslssl "...Even if you {i}are{/i} a total [chosen_tease_name] for doing it right now."
 
             n 1csrpu "So...{w=1}{nw}"
-            $ time_descriptor = "today" if jn_is_day() else "tonight"
+            $ time_descriptor = __("today") if jn_is_day() else __("tonight")
             extend 1tnmbo " what did you wanna do [time_descriptor],{w=0.2} [player]?"
 
             # Add pending apology, reset the admission
