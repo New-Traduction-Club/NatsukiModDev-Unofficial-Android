@@ -148,7 +148,7 @@ label splashscreen:
         "It is designed to be played only after the official game has been completed, and contains spoilers for the official game."
         "Game files for Doki Doki Literature Club are required to play this mod and can be downloaded for free at: http://ddlc.moe"
         $ narrator(
-            "By playing [config.name] you agree that you have completed Doki Doki Literature Club and accept any spoilers contained within.",
+            __("By playing [config.name] you agree that you have completed Doki Doki Literature Club and accept any spoilers contained within."),
             interact=False
         )
         $ renpy.display_menu(items=[ ("I agree.", True)], screen="choice_centred")
@@ -222,7 +222,7 @@ label before_main_menu:
 
     # Prevent the player's menu hotkey from defaulting to Save/Load
     $ store._game_menu_screen  = "preferences"
-    
+
     return
 
 label quit:
@@ -230,7 +230,7 @@ label quit:
         # Remove any consequences from not quitting properly
         if not Natsuki.getForceQuitAttempt():
             Natsuki.removeApology(jn_apologies.ApologyTypes.sudden_leave)
-            
+
             if Natsuki.getQuitApology() == jn_apologies.ApologyTypes.sudden_leave:
                 Natsuki.clearQuitApology()
 
