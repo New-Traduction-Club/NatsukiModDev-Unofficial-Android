@@ -189,9 +189,9 @@ screen categorized_menu(menu_items, category_pane_space, option_list_space, cate
                         python:
                             import random
 
-                            go_back_text = "Go back"
+                            go_back_text = __("Go back")
                             if random.randint(0, 999) == 1:
-                                go_back_text = "Go baka"
+                                go_back_text = __("Go baka")
 
                         textbutton _(go_back_text):
                             style "categorized_menu_button"
@@ -887,7 +887,7 @@ screen navigation():
                     true=Start(),
                     false=Show(
                         screen="name_input",
-                        message="Please enter your name",
+                        message=__("Please enter your name"),
                         ok_action=Function(FinishEnterName)
                     )
                 )
@@ -1180,10 +1180,10 @@ style about_label_text:
 init python:
     def FileActionMod(name, page=None, **kwargs):
         if persistent.playthrough == 1 and not persistent.deleted_saves and renpy.current_screen().screen_name[0] == "load" and FileLoadable(name):
-            return Show(screen="dialog", message="File error: \"characters/sayori.chr\"\n\nThe file is missing or corrupt.",
-                ok_action=Show(screen="dialog", message="The save file is corrupt. Starting a new game.", ok_action=Function(renpy.full_restart, label="start")))
+            return Show(screen="dialog", message=__("File error: \"characters/sayori.chr\"\n\nThe file is missing or corrupt."),
+                ok_action=Show(screen="dialog", message=__("The save file is corrupt. Starting a new game."), ok_action=Function(renpy.full_restart, label="start")))
         elif persistent.playthrough == 3 and renpy.current_screen().screen_name[0] == "save":
-            return Show(screen="dialog", message="You wont be needing to save anymore,\nBesides it doesn't work when we're sitting doing nothing like this...", ok_action=Hide("dialog"))
+            return Show(screen="dialog", message=__("You wont be needing to save anymore,\nBesides it doesn't work when we're sitting doing nothing like this..."), ok_action=Hide("dialog"))
         else:
             return FileAction(name)
 
@@ -1372,7 +1372,7 @@ screen preferences():
 
                     vbox:
 
-                        label _("Random chatter: {0}".format(jn_preferences.random_topic_frequency.getRandomTopicFrequencyDescription()))
+                        label _(__("Random chatter: {0}").format(jn_preferences.random_topic_frequency.getRandomTopicFrequencyDescription()))
 
                         bar value FieldValue(
                             object=persistent,
@@ -1390,22 +1390,22 @@ screen preferences():
 
                         bar value Preference("auto-forward time")
 
-                        label _("Sunrise: {0}AM".format(jn_locations.getHourFromSunriseSunsetValue(persistent._jn_sunrise_setting)))
+                        label _(__("Sunrise: {0}AM").format(jn_locations.getHourFromSunriseSunsetValue(persistent._jn_sunrise_setting)))
                         bar value FieldValue(persistent, "_jn_sunrise_setting", range=6, max_is_zero=False, style="slider")
 
-                        label _("Sunset: {0}PM".format(jn_locations.getHourFromSunriseSunsetValue(persistent._jn_sunset_setting)))
+                        label _(__("Sunset: {0}PM").format(jn_locations.getHourFromSunriseSunsetValue(persistent._jn_sunset_setting)))
                         bar value FieldValue(persistent, "_jn_sunset_setting", range=6, max_is_zero=False, style="slider")
 
                     vbox:
                         if config.has_music:
-                            label _("Music Volume: {0}%".format(int(preferences.get_volume("music") * 100)))
+                            label _(__("Music Volume: {0}%").format(int(preferences.get_volume("music") * 100)))
 
                             hbox:
                                 bar value Preference("music volume")
 
                         if config.has_sound:
 
-                            label _("Sound Volume: {0}%".format(int(preferences.get_volume("sfx") * 100)))
+                            label _(__("Sound Volume: {0}%").format(int(preferences.get_volume("sfx") * 100)))
 
                             hbox:
                                 bar value Preference("sound volume")
