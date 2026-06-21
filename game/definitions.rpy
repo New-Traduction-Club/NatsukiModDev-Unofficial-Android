@@ -8,6 +8,8 @@ default persistent.jn_last_visited_date = datetime.datetime.now()
 default persistent._jn_player_tt_state = 0
 default persistent._jn_player_tt_instances = 0
 
+default end_letter_gender = "o"
+
 #Our main topic pool
 default persistent._event_list = list()
 

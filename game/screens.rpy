@@ -1429,6 +1429,14 @@ screen preferences():
                                 action Preference("all mute", "toggle")
                                 style "mute_all_button"
 
+                vbox:
+                    style_prefix "radio"
+                    label _("Language")
+
+                    # Real languages should go alphabetical order by English name.
+                    textbutton "English" text_font "mod_assets/fonts/natsuki.ttf" action [Language(None), SetField(persistent, "language", "english"), Show("dialog", message="It is recommended to restart to apply the changes.", ok_action=Hide("dialog"))]
+                    textbutton "Español" text_font "mod_assets/fonts/natsuki.ttf" action [Language("spanish"), SetField(persistent, "language", "spanish"), Show("dialog", message="Se recomienda reiniciar el juego\npara aplicar los cambios.", ok_action=Hide("dialog"))]
+
     text "v[config.version]":
         xalign 1.0 yalign 1.0
         xoffset -10 yoffset -10
