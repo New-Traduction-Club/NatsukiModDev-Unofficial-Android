@@ -36,14 +36,14 @@ label random_music_change:
         return
 
     $ track_quip = random.choice([
-        "Alright!{w=0.2} Time for a different tune!",
-        "Okaaay!{w=0.2} Time for another song!",
-        "Yeah,{w=0.2} I think I'm about done with this song.",
-        "'Kay,{w=0.2} that's enough of that.",
-        "New song time!",
-        "That's about enough of that number!",
-        "I wanna listen to something else...",
-        "Time to change things up!"
+        __("Alright!{w=0.2} Time for a different tune!"),
+        __("Okaaay!{w=0.2} Time for another song!"),
+        __("Yeah,{w=0.2} I think I'm about done with this song."),
+        __("'Kay,{w=0.2} that's enough of that."),
+        __("New song time!"),
+        __("That's about enough of that number!"),
+        __("I wanna listen to something else..."),
+        __("Time to change things up!")
     ])
     n 3nchbg "[track_quip]{w=2}{nw}"
     show natsuki 4nchsmeme
@@ -55,12 +55,12 @@ label random_music_change:
     $ jnPause(2)
 
     $ track_followup = random.choice([
-        "Now,{w=0.2} let's see...",
-        "Now,{w=0.2} what have we got...",
-        "Let's see here...",
-        "What else have we got...",
-        "Aha!{w=0.5} Let's try this one!",
-        "Let me see..."
+        __("Now,{w=0.2} let's see..."),
+        __("Now,{w=0.2} what have we got..."),
+        __("Let's see here..."),
+        __("What else have we got..."),
+        __("Aha!{w=0.5} Let's try this one!"),
+        __("Let me see...")
     ])
     n 2fcssm "[track_followup]{w=2}{nw}"
     show natsuki 4fcssm
@@ -73,14 +73,14 @@ label random_music_change:
     $ jnPause(2)
     $ renpy.play(filename=jn_custom_music.getMusicFileRelativePath(file_name=music_title, is_custom=True), channel="music", fadein=2)
     $ jn_custom_music._now_playing = music_title
-    $ renpy.notify("Now playing: {0}".format(jn_custom_music._now_playing.split(".")[0]))
+    $ renpy.notify(__("Now playing: {0}").format(jn_custom_music._now_playing.split(".")[0]))
     $ track_complete = random.choice([
-        "Done~!",
-        "All done!",
-        "All good!",
-        "There we go!",
-        "And...{w=1} we're good!",
-        "Okie-dokie!{w=0.75} Ehehe."
+        __("Done~!"),
+        __("All done!"),
+        __("All good!"),
+        __("There we go!"),
+        __("And...{w=1} we're good!"),
+        __("Okie-dokie!{w=0.75} Ehehe.")
     ])
 
     n 2uchbgeme "[track_complete]{w=2}{nw}"
@@ -98,9 +98,9 @@ init 5 python:
             persistent._topic_database,
             label="random_music_enable",
             unlocked=True,
-            prompt="Can you play random custom music for me?",
+            prompt=__("Can you play random custom music for me?"),
             conditional="persistent.jn_custom_music_unlocked and not persistent.jn_random_music_enabled",
-            category=["Music"],
+            category=[__("Music")],
             player_says=True,
             affinity_range=(jn_affinity.AFFECTIONATE, None),
             location="classroom"
@@ -156,9 +156,9 @@ init 5 python:
             persistent._topic_database,
             label="random_music_disable",
             unlocked=True,
-            prompt="Can you stop playing random custom music?",
+            prompt=__("Can you stop playing random custom music?"),
             conditional="persistent.jn_custom_music_unlocked and persistent.jn_random_music_enabled",
-            category=["Music"],
+            category=[__("Music")],
             player_says=True,
             affinity_range=(jn_affinity.AFFECTIONATE, None),
             location="classroom"
