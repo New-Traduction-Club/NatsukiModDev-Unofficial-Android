@@ -49,12 +49,12 @@ init python in jn_custom_music:
     CUSTOM_MUSIC_DIRECTORY = os.path.join(renpy.config.basedir, CUSTOM_MUSIC_FOLDER).replace("\\", "/")
 
     _NATSUKI_PICK_MUSIC_DONE_QUIPS = [
-        "Done~!",
-        "All done!",
-        "All good!",
-        "There we go!",
-        "And...{w=0.3} we're good!",
-        "Okie-dokie!{w=0.2} Ehehe."
+        __("Done~!"),
+        __("All done!"),
+        __("All good!"),
+        __("There we go!"),
+        __("And...{w=0.3} we're good!"),
+        __("Okie-dokie!{w=0.2} Ehehe.")
     ]
 
     # Tracks what is currently playing to avoid repetition with random music picks
@@ -124,14 +124,14 @@ label music_menu:
                 file_name=music_file[0]
             ) for music_file in jn_utils.getAllDirectoryFiles(
                 path=jn_custom_music.CUSTOM_MUSIC_DIRECTORY,
-                extension_list=jn_utils.getSupportedMusicFileExtensions()            
+                extension_list=jn_utils.getSupportedMusicFileExtensions()
             )]
             custom_music_options.sort()
 
             # Add random option if we have more than one potential track for Nat to pick
             if len(custom_music_options) > 1:
                 custom_music_options.insert(0, jn_custom_music.JNCustomMusicSelectionOption(
-                    display_prompt="You pick!",
+                    display_prompt=__("You pick!"),
                     option_type=jn_custom_music.JNMusicOptionTypes.random,
                     file_name=None
                 ))
@@ -173,12 +173,12 @@ label music_menu:
                 ))
 
             custom_music_options.append(jn_custom_music.JNCustomMusicSelectionOption(
-                display_prompt="Default",
+                display_prompt=__("Default"),
                 option_type=jn_custom_music.JNMusicOptionTypes.location,
                 file_name=None
             ))
             custom_music_options.append(jn_custom_music.JNCustomMusicSelectionOption(
-                display_prompt="No music",
+                display_prompt=__("No music"),
                 option_type=jn_custom_music.JNMusicOptionTypes.no_music,
                 file_name=None
             ))
@@ -188,13 +188,13 @@ label music_menu:
     # We failed to get the custom music, prompt player to correct
     if not success:
         show natsuki at jn_center
-        
+
         n 4kllsssbr "Uhmm..."
-        n 4klrflsbr "Hey...{w=0.75}{nw}" 
+        n 4klrflsbr "Hey...{w=0.75}{nw}"
         extend 4knmajsbr " [player]?"
         n 4kslslsbr "Something {i}kinda{/i} went wrong when I was trying look for your music...{w=1}{nw}"
         extend 4kslsssbr " can you just check everything out real quick?"
-        n 2tlraj "As a reminder -{w=0.5}{nw}" 
+        n 2tlraj "As a reminder -{w=0.5}{nw}"
         extend 2tnmsl " anything you want me to play needs to be in the {i}custom_music{/i} folder."
         n 2fcsbgsbl "Just make sure it's all in {i}.mp3,{w=0.1} .ogg or .wav{/i} format!"
 
@@ -207,7 +207,7 @@ label music_menu:
         n 1tsqaj "Uh...{w=1}{nw}"
         extend 1tslaj " huh."
         n 2tsgsg "And {i}how{/i} exactly do you plan to hear any music with the volume at zero?"
-        n 2fchbg "Jeez,{w=0.2} [player].{w=0.75}{nw}" 
+        n 2fchbg "Jeez,{w=0.2} [player].{w=0.75}{nw}"
         extend 1uchgn " How do you even get dressed in the morning with memory like that?!"
         n 3ullss "Well,{w=0.2} whatever.{w=0.75}{nw}"
         extend 3unmaj " So..."
@@ -235,13 +235,13 @@ label music_menu:
 
     else:
         $ chosen_quip = renpy.substitute(random.choice([
-            "You wanna put something else on?{w=0.2} You got it!",
-            "You better play something good,{w=0.2} [player]!",
-            "You wanna play something?{w=0.2} Sure!",
-            "Some different music?{w=0.2} {i}Now{/i} we're talking!",
-            "Another track?{w=0.2} Sure thing!",
-            "You wanna play something else?{w=0.2} Go for it!",
-            "Huh?{w=0.2} What did you have in mind,{w=0.2} [player]?"
+            __("You wanna put something else on?{w=0.2} You got it!"),
+            __("You better play something good,{w=0.2} [player]!"),
+            __("You wanna play something?{w=0.2} Sure!"),
+            __("Some different music?{w=0.2} {i}Now{/i} we're talking!"),
+            __("Another track?{w=0.2} Sure thing!"),
+            __("You wanna play something else?{w=0.2} Go for it!"),
+            __("Huh?{w=0.2} What did you have in mind,{w=0.2} [player]?")
         ]))
         n 3unmbgl "[chosen_quip]"
         show natsuki option_wait_excited at jn_left
@@ -257,17 +257,17 @@ label music_menu:
 
     if _return.option_type == jn_custom_music.JNMusicOptionTypes.no_music:
         $ music_quip = renpy.substitute(random.choice([
-            "Just quiet for now,{w=0.2} huh?",
-            "Not in the mood,{w=0.2} [player]?{w=0.2} No worries!",
-            "'Kay!{w=0.2} I'll just turn that off...",
-            "Alright!{w=0.2} Let me get that for you real quick...",
-            "Sure thing!{w=0.2} Let me just get that for you...",
-            "No worries!{w=0.2} Just give me a sec...",
+            __("Just quiet for now,{w=0.2} huh?"),
+            __("Not in the mood,{w=0.2} [player]?{w=0.2} No worries!"),
+            __("'Kay!{w=0.2} I'll just turn that off..."),
+            __("Alright!{w=0.2} Let me get that for you real quick..."),
+            __("Sure thing!{w=0.2} Let me just get that for you..."),
+            __("No worries!{w=0.2} Just give me a sec..."),
         ]))
         n 2knmsm "[music_quip]"
 
         show natsuki 2fchsm
-        $ music_title = "No music"
+        $ music_title = __("No music")
 
         $ jn_custom_music.presentMusicPlayer("playing")
         play audio button_tap_c
@@ -276,11 +276,11 @@ label music_menu:
         $ jnPause(2)
 
         n 2uchsm "There you go, [player]!{w=2}{nw}"
-        
+
         if persistent.jn_random_music_enabled:
             # Stop playing random music, if enabled
             $ persistent.jn_random_music_enabled = False
-            n 1unmaj "Oh{w=0.2} -{w=0.50}{nw}" 
+            n 1unmaj "Oh{w=0.2} -{w=0.50}{nw}"
             extend 3kchbgsbl " and I'll stop switching around the music too.{w=2}{nw}"
 
         $ jn_custom_music.hideMusicPlayer()
@@ -294,23 +294,23 @@ label music_menu:
 
         # Play a random track
         $ chosen_question_quip = renpy.substitute(random.choice([
-            "Oho?{w=0.2} You want me to pick?",
-            "Huh?{w=0.2} You want me to choose something?",
-            "Hmm?{w=0.2} You want me to pick?",
-            "Oh?{w=0.2} You want me to choose something to play?",
-            "Eh?{w=0.2} Is it my turn to pick?"
+            __("Oho?{w=0.2} You want me to pick?"),
+            __("Huh?{w=0.2} You want me to choose something?"),
+            __("Hmm?{w=0.2} You want me to pick?"),
+            __("Oh?{w=0.2} You want me to choose something to play?"),
+            __("Eh?{w=0.2} Is it my turn to pick?")
         ]))
         n 1unmajl "[chosen_question_quip]"
 
         $ chosen_answer_quip = renpy.substitute(random.choice([
-            "Sure!",
-            "Sure,{w=0.2} why not!",
-            "Can do!",
-            "Heh.{w=0.2} Leave it to me,{w=0.2} [player]!",
-            "Ehehe.{w=0.2} About time too,{w=0.2} [player]!",
-            "Okie-dokie,{w=0.2} [player]!",
-            "Finally!{w=0.2} Ahaha.",
-            "{i}Now{/i} we're talking!"
+            __("Sure!"),
+            __("Sure,{w=0.2} why not!"),
+            __("Can do!"),
+            __("Heh.{w=0.2} Leave it to me,{w=0.2} [player]!"),
+            __("Ehehe.{w=0.2} About time too,{w=0.2} [player]!"),
+            __("Okie-dokie,{w=0.2} [player]!"),
+            __("Finally!{w=0.2} Ahaha."),
+            __("{i}Now{/i} we're talking!")
         ]))
         n 4uchbgl "[chosen_answer_quip]"
         show natsuki 1fchsmleme
@@ -322,12 +322,12 @@ label music_menu:
         $ jnPause(2)
 
         $ chosen_search_quip = renpy.substitute(random.choice([
-            "Now,{w=0.2} let's see...",
-            "Let me take a look...",
-            "Alright,{w=0.2} what have we got...",
-            "Oh!{w=0.2} How about this?",
-            "Let's see here...",
-            "Let's see..."
+            __("Now,{w=0.2} let's see..."),
+            __("Let me take a look..."),
+            __("Alright,{w=0.2} what have we got..."),
+            __("Oh!{w=0.2} How about this?"),
+            __("Let's see here..."),
+            __("Let's see...")
         ]))
         n 2ullbgl "[chosen_search_quip]{w=2}{nw}"
         show natsuki 4fcspul
@@ -346,15 +346,15 @@ label music_menu:
 
         $ jn_custom_music.hideMusicPlayer()
         $ jn_custom_music._now_playing = music_title
-        $ renpy.notify("Now playing: {0}".format(jn_custom_music._now_playing.split(".")[0]))
+        $ renpy.notify(__("Now playing: {0}").format(jn_custom_music._now_playing.split(".")[0]))
 
     elif _return.option_type == jn_custom_music.JNMusicOptionTypes.location:
         $ music_quip = renpy.substitute(random.choice([
-            "Whatever works,{w=0.2} huh?",
-            "You got it!",
-            "Well,{w=0.2} you're the boss!",
-            "Just the usual,{w=0.2} huh?{w=0.2} Sure thing!",
-            "Sure thing!{w=0.2} Just give me a sec...",
+            __("Whatever works,{w=0.2} huh?"),
+            __("You got it!"),
+            __("Well,{w=0.2} you're the boss!"),
+            __("Just the usual,{w=0.2} huh?{w=0.2} Sure thing!"),
+            __("Sure thing!{w=0.2} Just give me a sec..."),
         ]))
         n 2knmsm "[music_quip]"
 
@@ -406,19 +406,19 @@ label music_menu:
 
         $ jn_custom_music.hideMusicPlayer()
         $ jn_custom_music._now_playing = _return.display_prompt
-        $ renpy.notify("Now playing: {0}".format(_return.display_prompt))
+        $ renpy.notify(__("Now playing: {0}").format(_return.display_prompt))
 
     $ jn_custom_music._last_music_option = _return.display_prompt
     $ Natsuki.resetLastTopicCall()
     $ Natsuki.resetLastIdleCall()
-    
+
     jump ch30_loop
 
 screen custom_music_menu(items):
     $ option_width = 400
     if persistent._jn_display_option_icons:
         add "mod_assets/icons/custom_music.png" anchor(0, 0) pos(1280 - (275 + option_width), 20)
-    
+
     elif not persistent._jn_display_option_icons:
         $ option_width += 175
 
@@ -428,7 +428,7 @@ screen custom_music_menu(items):
             ypos 0
             yanchor 0
 
-            textbutton "Nevermind":
+            textbutton _("Nevermind"):
                 style "categorized_menu_button"
                 xsize option_width
                 action Return(False)
