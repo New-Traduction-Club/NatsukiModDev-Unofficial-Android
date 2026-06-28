@@ -98,7 +98,7 @@ image particles snow:
 image particles cherry_blossom day:
     "mod_assets/backgrounds/atmosphere/particles/cherry_blossom_day.png"
     cherry_blossom_scroll
-    
+
 image particles cherry_blossom night:
     "mod_assets/backgrounds/atmosphere/particles/cherry_blossom_night.png"
     cherry_blossom_scroll
@@ -169,7 +169,7 @@ init 0 python in jn_atmosphere:
 
     # Zorder indexes
     # Complete order is:
-    # v PROPS 
+    # v PROPS
     # v NATSUKI
     # v BACKGROUND
     # v DIM
@@ -263,10 +263,10 @@ init 0 python in jn_atmosphere:
         day_sky_image="sky day rain",
         night_sky_image="sky night rain",
         notify_text=[
-            "Ugh... raining again. [angry_emote]",
-            "Ew. Rain. [angry_emote]",
-            "Man... why does it have to rain so much?",
-            "Huh? It's raining? Gross... [angry_emote]",
+            __("Ugh... raining again. [angry_emote]"),
+            __("Ew. Rain. [angry_emote]"),
+            __("Man... why does it have to rain so much?"),
+            __("Huh? It's raining? Gross... [angry_emote]"),
         ],
         dim_image="dim medium",
         day_clouds_image="clouds day heavy",
@@ -281,10 +281,10 @@ init 0 python in jn_atmosphere:
         day_sky_image="sky day thunder",
         night_sky_image="sky night thunder",
         notify_text=[
-            "Those clouds look really dark, huh? :<",
-            "It was a dark and stormy night...",
-            "Ugh... I hate storms... [angry_emote]",
-            "Hey... is it stormy over there too? :/",
+            __("Those clouds look really dark, huh? :<"),
+            __("It was a dark and stormy night..."),
+            __("Ugh... I hate storms... [angry_emote]"),
+            __("Hey... is it stormy over there too? :/"),
         ],
         dim_image="dim heavy",
         day_clouds_image="clouds day thunder",
@@ -299,9 +299,9 @@ init 0 python in jn_atmosphere:
         day_sky_image="sky day snow",
         night_sky_image="sky night overcast",
         notify_text=[
-            "[player]! [player]! It's snowing! [happy_emote]",
-            "It's snowing! It's snowing! [happy_emote]",
-            "[player]! Is it snowing for you too?! [happy_emote]",
+            __("[player]! [player]! It's snowing! [happy_emote]"),
+            __("It's snowing! It's snowing! [happy_emote]"),
+            __("[player]! Is it snowing for you too?! [happy_emote]"),
         ],
         dim_image="dim light",
         day_clouds_image="clouds day light",
@@ -361,7 +361,7 @@ init 0 python in jn_atmosphere:
             api_weather_result = getWeatherFromApi()
             if not api_weather_result:
                 jn_utils.log("Unable to retrieve weather from API; defaulting to Sunny.")
-                renpy.notify("Failed to update weather; please check log for more information.")
+                renpy.notify(__("Failed to update weather; please check log for more information."))
                 showSky(WEATHER_SUNNY, with_transition=with_transition)
 
             else:
@@ -468,7 +468,7 @@ init 0 python in jn_atmosphere:
         # Add the clouds, if defined
         if clouds_to_show:
             renpy.show(name=clouds_to_show, zorder=_CLOUDS_Z_INDEX)
-        
+
         else:
             renpy.hide("clouds")
             renpy.with_statement(trans=store.weather_change_transition)
@@ -562,7 +562,7 @@ init 0 python in jn_atmosphere:
 
         except Exception as exception:
             jn_utils.log("Unable to fetch weather from OpenWeatherMap as an exception occurred; {0}".format(exception.message))
-        
+
         # No map entries, fallback
         return None
 
@@ -625,7 +625,7 @@ init 0 python in jn_atmosphere:
     def playRaindropSoundEffects(threaded_function_reference):
         """
         Plays random raindrop sound effects on a loop, with a 2-3 second interval, until the passed JNThreadedFunction reference is no longer running.
-        
+
         IN:
             - threaded_function_reference - JNThreadedFunction instance used to check whether the loop should continue, based on the running state.
         """
@@ -638,13 +638,13 @@ init 0 python in jn_atmosphere:
 
             else:
                 renpy.play("mod_assets/sfx/drip_b.ogg")
-            
+
             time.sleep(random.randint(2, 3))
 
     def playThunderSoundEffects(threaded_function_reference):
         """
         Plays random thunder sound effects on a loop, with a 10-20 second interval, until the passed JNThreadedFunction reference is no longer running.
-        
+
         IN:
             - threaded_function_reference - JNThreadedFunction instance used to check whether the loop should continue, based on the running state.
         """
@@ -657,7 +657,7 @@ init 0 python in jn_atmosphere:
 
             else:
                 renpy.play("mod_assets/sfx/thunder_b.ogg")
-            
+
             time.sleep(random.randint(10, 20))
 
     SOUND_EFFECTS_RAIN = jn_utils.JNThreadedFunction(function=store.jn_atmosphere.playRaindropSoundEffects)
@@ -670,7 +670,7 @@ label weather_change:
     $ jn_atmosphere.updateSky()
 
     if (
-        Natsuki.isHappy(higher=True) 
+        Natsuki.isHappy(higher=True)
         and random.randint(1, 4) == 1
         and previous_weather.weather_type != jn_atmosphere.current_weather.weather_type
     ):

@@ -84,7 +84,7 @@ label talk_out_of_topics:
 
             "I'd rather wait, but don't remind me next time.":
                 $ persistent._jn_natsuki_out_of_topics_remind = False
-                
+
                 n 2tsqpueqm "Huh?{w=0.75}{nw}"
                 extend 2unmfl " Oh.{w=0.75}{nw}"
                 extend 2csrsssbl " Heh."
@@ -122,8 +122,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_did_you_have_pets",
             unlocked=True,
-            prompt="Did you ever have any pets?",
-            category=["Animals", "Family"],
+            prompt=__("Did you ever have any pets?"),
+            category=[__("Animals"), __("Family")],
             player_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
             location="classroom"
@@ -133,7 +133,7 @@ init 5 python:
 
 label talk_did_you_have_pets:
     if get_topic("talk_did_you_have_pets").shown_count > 0:
-        n 4unmaj "Huh?{w=0.75}{nw}" 
+        n 4unmaj "Huh?{w=0.75}{nw}"
         extend 4tnmpu " Pets?"
         n 3ccspu "Hang on...{w=1}{nw}"
         extend 7tnmbo " didn't we talk about this already,{w=0.2} [player]?{w=1}{nw}"
@@ -151,7 +151,7 @@ label talk_did_you_have_pets:
         n 7tnmfl "Where would I even {i}get{/i} one now anyway?{w=0.75}{nw}"
         extend 4clremsbl " L-{w=0.2}let alone all the stuff I'd need to actually keep it here!"
         n 2nsqem "You didn't seriously think I'd just have all that gear chilling out in my desk or something,{w=0.2} did you?"
-        n 4cslflsbr "...And somehow I doubt the closet was left stocked up with pet food and kitty litter,{w=0.75}{nw}" 
+        n 4cslflsbr "...And somehow I doubt the closet was left stocked up with pet food and kitty litter,{w=0.75}{nw}"
         extend 4cllbosbr " of all things."
         n 2unmfl "I mean,{w=0.5}{nw}"
         extend 2ccsgs " don't get me wrong!{w=0.5}{nw}"
@@ -191,7 +191,7 @@ label talk_did_you_have_pets:
             else:
                 n 1cslsllsbr "..."
                 n 4ccsfllsbr "N-{w=0.2}nevermind.{w=0.75}{nw}"
-                extend 3ccsajsbl " It just wouldn't be fair on whatever it was.{w=0.75}{nw}" 
+                extend 3ccsajsbl " It just wouldn't be fair on whatever it was.{w=0.75}{nw}"
                 extend 3ccscasbl " That's all I'm saying."
 
             n 4ccsemsbl "A-{w=0.2}anyway.{w=0.75}{nw}"
@@ -210,13 +210,13 @@ label talk_did_you_have_pets:
 
             else:
                 n 7tnmaj "Why all the talk about pets all of a sudden,{w=0.2} [player]?"
-                
+
                 show natsuki option_wait_curious
 
         else:
             n 1cslsllsbr "..."
             n 4ccsfllsbr "N-{w=0.2}nevermind.{w=0.75}{nw}"
-            extend 3ccsajsbl " It just wouldn't be fair on whatever it was.{w=0.75}{nw}" 
+            extend 3ccsajsbl " It just wouldn't be fair on whatever it was.{w=0.75}{nw}"
             extend 3ccscasbl " That's all I'm saying."
             n 3tlraj "But...{w=1}{nw}"
             extend 7tnmbo " why all the talk about pets all of a sudden,{w=0.2} [player]?"
@@ -224,7 +224,7 @@ label talk_did_you_have_pets:
             show natsuki option_wait_curious
 
     else:
-        n 3tnmboeqm "Huh?{w=0.75}{nw}" 
+        n 3tnmboeqm "Huh?{w=0.75}{nw}"
         extend 3tsqfl " Did I ever have any pets?"
         n 1fcssl "Heh.{w=0.75}{nw}"
         extend 4fllfl " I wish.{w=0.75}{nw}"
@@ -237,7 +237,7 @@ label talk_did_you_have_pets:
 
         else:
             n 4fnmem "Seriously -{w=0.5}{nw}"
-        
+
         extend 2flrwr " I was never allowed anything!{w=0.75}{nw}"
         extend 2fcsan " There was always some {i}convenient{/i} reason it couldn't possibly happen!"
         n 1fcsgs "And just to top it off..."
@@ -267,9 +267,9 @@ label talk_did_you_have_pets:
         n "[prompt]"
 
         "[response_yes]":
-            n 1uspgs "Oh!{w=0.5}{nw}" 
-            extend 4fchbs " Oh{w=0.2} oh{w=0.2} oh!" 
-            n 4unmbs "Come on!{w=0.75}{nw}" 
+            n 1uspgs "Oh!{w=0.5}{nw}"
+            extend 4fchbs " Oh{w=0.2} oh{w=0.2} oh!"
+            n 4unmbs "Come on!{w=0.75}{nw}"
             extend 3unmbg " You gotta tell me,{w=0.2} [player]!{w=0.75}{nw}"
 
             if player_has_pet:
@@ -310,7 +310,7 @@ label talk_did_you_have_pets:
             n 4cllfl "Man...{w=1}{nw}"
             extend 4tsqfl " really?"
             n 2nsrsl "..."
-            n 2nsraj "Well...{w=1}{nw}" 
+            n 2nsraj "Well...{w=1}{nw}"
             extend 1nlrbo " I gotta admit.{w=0.75}{nw}"
             extend 3nsrfl " I'd be lying if I said I wasn't at least {i}kinda{/i} disappointed."
 
@@ -324,7 +324,7 @@ label talk_did_you_have_pets:
                 n 4fsqss "Don't start thinking that means you're off the hook though,{w=0.2} [player].{w=0.75}{nw}"
                 extend 4fsqsm " Ehehe."
                 n 3fchbg "Nope!{w=0.75}{nw}"
-                
+
                 if Natsuki.isEnamored(higher=True):
                     extend 3fcsbg " As if I'd miss out on that kind of news.{w=0.75}{nw}"
                     extend 3flrss " And besides..."
@@ -370,10 +370,10 @@ label talk_did_you_have_pets:
                     extend 2cllbolsbl " Only you know that,{w=0.2} [player].{w=1.5}{nw}"
                     extend 4kslbolsbl " But..."
                     n 1ccsbolesisbl "..."
-                    n 1kslsll "...I understand.{w=0.75}{nw}" 
+                    n 1kslsll "...I understand.{w=0.75}{nw}"
                     extend 4ksqsll " Okay?"
                     n 4knmcal "Really."
-                    
+
                     if Natsuki.isLove(higher=True):
                         n 5ksrbol "...I get it.{w=1.25}{nw}"
                         extend 1ccsfllsbl " I just wanted you to know that too."
@@ -406,7 +406,7 @@ label talk_did_you_have_pets:
             else:
                 n 4ccsemsbr "W-{w=0.2}wait.{w=0.75}{nw}"
                 extend 4knmemsbr " You..."
-                n 1ksrpusbr "...Oh.{w=1}{nw}" 
+                n 1ksrpusbr "...Oh.{w=1}{nw}"
                 extend 4ksrflsbr " Jeez."
                 n 5kslbosbr "..."
                 n 4ccsflsbl "I'm...{w=1.25}{nw}"
@@ -414,7 +414,7 @@ label talk_did_you_have_pets:
                 extend 2kslbolsbl " T-{w=0.2}truly."
                 n 4kslcalsbr "..."
                 n 4ccsemlsbr "...Maybe we should just talk about something else for now.{w=0.75}{nw}"
-                extend 2cnmemlsbr " I-{w=0.2}if you wanted to,{w=0.5}{nw}" 
+                extend 2cnmemlsbr " I-{w=0.2}if you wanted to,{w=0.5}{nw}"
                 extend 2nsrbolsbr " I mean."
                 n 4ksrcalsbr "..."
 
@@ -444,9 +444,9 @@ label talk_did_you_have_pets:
             n 3ccsbglsbl "Unless you just said that hoping {i}I{/i} like them too,{w=0.2} anyway."
 
         else:
-            n 2nllaj "Though...{w=1}{nw}" 
+            n 2nllaj "Though...{w=1}{nw}"
             extend 2fllss " I've gotta ask."
-            n 4fcsbg "...Just how many videos have you made {i}yours{/i} the star of,{w=0.5}{nw}" 
+            n 4fcsbg "...Just how many videos have you made {i}yours{/i} the star of,{w=0.5}{nw}"
             extend 4fsqbg " [player]?"
 
         n 3usqsm "..."
@@ -456,7 +456,7 @@ label talk_did_you_have_pets:
         n 4ulraj "Well,{w=0.2} anyway.{w=0.75}{nw}"
         extend 3fcsaj " You better be taking care of yours,{w=0.2} [player]!"
         n 3fcspo "...Or I really will give you {i}paws{/i} for thought.{w=0.75}{nw}"
-        
+
         if Natsuki.isLove(higher=True):
             extend 3fchsmeme " Ehehe."
             n 3fchbll "Love you too,{w=0.2} [player]~!"
@@ -468,7 +468,7 @@ label talk_did_you_have_pets:
         n 4tnmfl "Chameleons?{w=0.75}{nw}"
         extend 7unmbo " Like with the swivelly eyes and all that?{w=0.75}{nw}"
         extend 7clrbo " Huh."
-        n 7clrfl "I...{w=1}{nw}" 
+        n 7clrfl "I...{w=1}{nw}"
         extend 3tnmbo " didn't even know people kept those,{w=0.2} honestly.{w=0.75}{nw}"
         extend 3tllss " Neat."
         n 1fcssm "...Heh."
@@ -504,7 +504,7 @@ label talk_did_you_have_pets:
         extend 7cnmbo " I've always wondered about ferrets.{w=0.75}{nw}"
         extend 7tslpu " Is it more like having a cat or a dog?"
         n 7cslbo "Huh."
-        n 4ullaj "Well anyway...{w=1}{nw}" 
+        n 4ullaj "Well anyway...{w=1}{nw}"
         extend 4fcstr " whatever they're like.{w=0.75}{nw}"
         extend 2fcssmesm " You better be taking care of the little guy!"
 
@@ -523,7 +523,7 @@ label talk_did_you_have_pets:
         extend 7ulrca " but I suppose I can see the reasons to keep them around.{w=0.75}{nw}"
         extend 7unmbg " Like for stress!"
         n 4fcsss "Heh."
-        n 3fcssm "I bet you feel like you could lose yourself in that tank,{w=0.5}{nw}" 
+        n 3fcssm "I bet you feel like you could lose yourself in that tank,{w=0.5}{nw}"
         extend 3fsqsm " huh?{w=0.75}{nw}"
         extend 3fchsm " Ehehe."
 
@@ -576,7 +576,7 @@ label talk_did_you_have_pets:
     elif persistent._jn_player_pet == "guinea_pigs":
         n 4uwdaj "Ooh!{w=0.75}{nw}"
         extend 3uchbg " Yeah!{w=0.2} I've seen those!"
-        n 3clrbgsbl "I don't exactly know {i}tons{/i} about them,{w=0.5}{nw}" 
+        n 3clrbgsbl "I don't exactly know {i}tons{/i} about them,{w=0.5}{nw}"
         extend 3fchgn " but I love the little sounds they make!{w=0.75}"
         extend 4fchbg " Especially when you have a bunch of them together!"
         n 2fcssm "I bet yours are a total bunch of chatterboxes too,{w=0.2} huh?{w=0.75}{nw}"
@@ -606,7 +606,7 @@ label talk_did_you_have_pets:
         if Natsuki.isAffectionate(higher=True):
             n 4nsrpo "...Or you really will find out how much I ham it up.{w=0.75}{nw}"
             extend 4fsqsm " Ehehe."
-            
+
             if Natsuki.isLove(higher=True):
                 n 4fchsmleaf "Love you too,{w=0.2} [player]~!"
 
@@ -620,7 +620,7 @@ label talk_did_you_have_pets:
         n 2clremsbr "Jeez...{w=1}{nw}"
         extend 2csqposbr " you aren't just messing with me,{w=0.2} are you?{w=0.75}{nw}"
         extend 2cllemsbr " How do you even {i}afford{/i} something like that,{w=0.2} [player]?"
-        
+
         if get_topic("talk_careful_spending").shown_count > 0:
             n 4tllsl "..."
             n 7tllpu "...Huh.{w=0.75}{nw}"
@@ -628,7 +628,7 @@ label talk_did_you_have_pets:
 
         else:
             n 5csrsssbr "...Even if it {i}is{/i} pretty cool."
-        
+
         n 2csrsssbr "W-{w=0.2}well,{w=0.2} anyway.{w=0.75}{nw}"
 
         if Natsuki.isAffectionate(higher=True):
@@ -666,7 +666,7 @@ label talk_did_you_have_pets:
         extend 2tllfl " Really,{w=0.2} [player]?{w=1.25}{nw}"
         extend 2tsqem " Lizards?"
         n 4ccsss "Heh.{w=0.75}{nw}"
-        extend 7ulraj " I gotta say,{w=0.2} [player] -{w=0.5}{nw}" 
+        extend 7ulraj " I gotta say,{w=0.2} [player] -{w=0.5}{nw}"
         extend 7unmbo " I'm impressed."
         n 6fchbg "...You {i}finally{/i} managed to find a pet just as cold-blooded as you!"
         n 1fsqdv "..."
@@ -681,8 +681,8 @@ label talk_did_you_have_pets:
         extend 3fchgn " It was a good one this time!"
         n 6fcsbg "And besides -{w=0.5}{nw}"
         extend 6unmaj " think about it!"
-        n 4fnmsg "Shouldn't you of all people know how to{w=0.5}{nw}" 
-        extend 3fsqbg " {i}shed{/i}{w=0.75}{nw}" 
+        n 4fnmsg "Shouldn't you of all people know how to{w=0.5}{nw}"
+        extend 3fsqbg " {i}shed{/i}{w=0.75}{nw}"
         extend 3fchbg " things off?{w=0.75}{nw}"
         extend 3nchgn " Ahaha."
 
@@ -733,9 +733,9 @@ label talk_did_you_have_pets:
         n 4ccsfllsbr "I-{w=0.2}I mean,{w=0.5}{nw}"
         extend 2fcsajlsbr " how could anyone {i}not{/i} love those little fuzzballs?{w=0.75}{nw}"
         extend 2fllsslsbr " Are you kidding me?!"
-        n 4fcsbgl "Especially those ones with the floppy ears!{w=0.75}{nw}" 
+        n 4fcsbgl "Especially those ones with the floppy ears!{w=0.75}{nw}"
         extend 4nchgnl " They look so cuddly!"
-        n 1fllbg "And then just to top if off,{w=0.5}{nw}" 
+        n 1fllbg "And then just to top if off,{w=0.5}{nw}"
         extend 3fspaj " they come in all those different colors too!{w=0.75}{nw}"
         extend 3fchbg " Talk about variety!"
         n 6ullaj "Just make sure you keep that cage spick and span though,{w=0.2} [player] -{w=0.5}{nw}"
@@ -747,20 +747,20 @@ label talk_did_you_have_pets:
         extend 4clremlsbl " {i}Snakes{/i}?"
         n 1csrunlsbr "..."
         n 4fcsunsbr "Uuuuuu..."
-        n 2kcsaj "...Fine.{w=0.75}{nw}" 
+        n 2kcsaj "...Fine.{w=0.75}{nw}"
         extend 2cslbosbr " I guess I'll just be straight with you,{w=0.2} [player]."
         n 1ccsfllsbr "I'm...{w=1}{nw}"
         extend 4ksrsllsbr " not {i}amazing{/i} with those."
         n 2fcsfllsbr "S-{w=0.2}snakes,{w=0.2} I mean."
-        n 2fllfll "They just...{w=1}{nw}" 
-        extend 2cslcal " don't really agree with me.{w=0.75}{nw}" 
+        n 2fllfll "They just...{w=1}{nw}"
+        extend 2cslcal " don't really agree with me.{w=0.75}{nw}"
         extend 4cslsll " I don't know why."
         n 6fcsgsl "B-{w=0.2}but that's not to say that they {i}can't{/i} be cute,{w=0.1} obviously!{w=0.75}{nw}"
         extend 3flrpo " Making that kind of assumption is just being ignorant."
         n 3ksrpo "...And they deserve care just like any other pet."
 
         if Natsuki.isAffectionate(higher=True):
-            n 1fcsaj "Besides,{w=0.2} [player] -{w=0.5}{nw}" 
+            n 1fcsaj "Besides,{w=0.2} [player] -{w=0.5}{nw}"
             extend 4ccsca " you know what you signed up for."
             n 3fchgn "You can't {i}shed{/i} your responsibilities that easily!{w=0.75}{nw}"
             extend 3nchgn " Ehehe."
@@ -820,8 +820,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_service_animals",
             unlocked=True,
-            prompt="Service animals",
-            category=["Animals"],
+            prompt=__("Service animals"),
+            category=[__("Animals")],
             nat_says=True,
             affinity_range=(jn_affinity.DISTRESSED, None),
             location="classroom"
@@ -893,7 +893,7 @@ label talk_service_animals:
             extend 2csrfl " that sort of stuff."
             n 7csrsl "But there was one I {i}did{/i} actually like."
             n 3cllpu "It was some kinda charity,{w=0.5}{nw}"
-            extend 3nllaj " but all their work was around training up service and therapy animals -{w=0.5}{nw}" 
+            extend 3nllaj " but all their work was around training up service and therapy animals -{w=0.5}{nw}"
             extend 3cllca " then getting them to people who needed them."
 
     if Natsuki.isNormal(higher=True):
@@ -913,7 +913,7 @@ label talk_service_animals:
         n 2clrss "The visitors didn't go into that much detail about them,{w=0.5}{nw}"
         extend 4csrss " and they aren't {i}exactly{/i} in the same group as service types..."
         n 4unmbo "But they're sorta like extra-tame pets for people going through rough times of some kind."
-        n 2ullaj "You know,{w=0.5}{nw}" 
+        n 2ullaj "You know,{w=0.5}{nw}"
         extend 2unmbo " like emotionally or mentally."
         n 4nchgn "...And they come in a ton of shapes and sizes too!"
         n 3clrbg "You have cats and dogs -{w=0.5}{nw}"
@@ -921,18 +921,18 @@ label talk_service_animals:
         extend 3fchsm " but even animals like those miniature horses can be trained up to help!"
         n 6fcsbg "You don't just find them hanging around the home either,{w=0.2} [player] -{w=0.5}{nw}"
         extend 6unmbg " they said that offices,{w=0.2} hospices and even hospitals can arrange visits with them too!"
-        
+
         if Natsuki.isAffectionate(higher=True):
             n 3nchgn "Pretty awesome,{w=0.2} right?{w=0.75}{nw}"
             extend 3clrsm " Ehehe..."
             n 4clrslsbl "..."
             n 5ksrbosbl "..."
             n 1kcsflesi "..."
-            n 4kllbo "It...{w=1}{nw}" 
+            n 4kllbo "It...{w=1}{nw}"
             extend 4kslbo " just sucks sometimes,{w=0.2} thinking about it now.{w=0.75}{nw}"
             extend 4knmbol " You know?"
             n 5cslcal "...W-{w=0.2}with Sayori and all."
-            n 5cslfll "She...{w=1}{nw}" 
+            n 5cslfll "She...{w=1}{nw}"
             extend 4cdlbol " wasn't around that day we had the visit.{w=0.75}{nw}"
             extend 4cslbol " Doesn't exactly take a genius to figure out why."
             n 2ccsfllsbl "I-{w=0.2}it's just that..."
@@ -941,8 +941,8 @@ label talk_service_animals:
                 n 2ksrbolsbl "..."
                 n 2ksrfllsbr "I can't help but think if just having one around could have {i}done{/i} something for her.{w=0.75}{nw}"
                 extend 5knmbolsbr " One of those support animals."
-                n 4ccsemlsbr "I...{w=1}{nw}" 
-                extend 4ccsfllsbr " know...{w=1}{nw}" 
+                n 4ccsemlsbr "I...{w=1}{nw}"
+                extend 4ccsfllsbr " know...{w=1}{nw}"
                 extend 4cdlbolsbr " they can't work miracles.{w=0.75}{nw}"
                 extend 2ccssrlsbr " I-{w=0.2}I'm not {i}naive{/i}."
                 n 4kslpulsbr "But..."
@@ -1034,9 +1034,9 @@ init 5 python:
             persistent._topic_database,
             label="talk_using_computers_healthily",
             unlocked=True,
-            prompt="Using computers healthily",
+            prompt=__("Using computers healthily"),
             conditional="store.jn_utils.get_current_session_length().total_seconds() / 3600 >= 8",
-            category=["Health", "Technology"],
+            category=[__("Health"), __("Technology")],
             nat_says=True,
             affinity_range=(jn_affinity.HAPPY, None),
             location="classroom"
@@ -1090,23 +1090,23 @@ label talk_using_computers_healthily:
             n 5csrbolsbr "I shouldn't even have to remind you by now,{w=0.2} [chosen_tease]."
 
         elif Natsuki.isAffectionate(higher=True):
-            n 3unmeml "N-{w=0.2}not that it's a problem,{w=0.5}{nw}" 
+            n 3unmeml "N-{w=0.2}not that it's a problem,{w=0.5}{nw}"
             extend 3clremlsbl " or anything like that!{w=0.75}{nw}"
             extend 3ccspolsbl " Y-{w=0.2}you should know it isn't by now anyway,{w=0.2} [player]."
 
         else:
-            n 3unmeml "N-{w=0.2}not that I'm saying it's some kind of problem or anything like that,\n{w=0.5}{nw}" 
+            n 3unmeml "N-{w=0.2}not that I'm saying it's some kind of problem or anything like that,\n{w=0.5}{nw}"
             extend 4ccsgslsbl "{i}obviously{/i}!"
             n 2csrbolsbl "..."
 
         n 4clrpu "Though..."
         n 7tnmflsbr "Doesn't that mean you're spending a whole bunch of extra time sat around with your computer every day?{w=0.75}{nw}"
         extend 3tsqslsbr " Just for my sake?"
-        
+
         if (
-            Natsuki.isAffectionate(higher=True) 
-            and (jn_activity.ACTIVITY_MANAGER.hasPlayerDoneActivity(jn_activity.JNActivities.artwork) 
-            or jn_activity.ACTIVITY_MANAGER.hasPlayerDoneActivity(jn_activity.JNActivities.coding) 
+            Natsuki.isAffectionate(higher=True)
+            and (jn_activity.ACTIVITY_MANAGER.hasPlayerDoneActivity(jn_activity.JNActivities.artwork)
+            or jn_activity.ACTIVITY_MANAGER.hasPlayerDoneActivity(jn_activity.JNActivities.coding)
             or jn_activity.ACTIVITY_MANAGER.hasPlayerDoneActivity(jn_activity.JNActivities.work_applications))
         ):
             $ activity_options = []
@@ -1130,7 +1130,7 @@ label talk_using_computers_healthily:
             extend 2tllsl " I guess you probably still use your computer for other stuff already."
 
         n 1ccsflsbl "But that still doesn't change the fact you're gonna be racking up a load of extra screen time thanks to me."
-        
+
         if Natsuki.isEnamored(higher=True):
             n 2clrfllsbl "And the last thing I wanna hear about is you getting yourself all cramped up because you were slouched over like a potato for hours."
             n 2cllsl "..."
@@ -1147,7 +1147,7 @@ label talk_using_computers_healthily:
         extend 3fchgn " whether you like it or not!"
 
     n 1fcsbg "Alright,{w=0.75}{nw}"
-    extend 6fcsaj " so number one:{w=1}{nw}" 
+    extend 6fcsaj " so number one:{w=1}{nw}"
     extend 3unmbg " posture!"
     n 1ccsflsbl "...And no,{w=0.2} [player].{w=0.75}{nw}"
     extend 4csqtr " I mean {i}actual{/i} posture.{w=0.75}{nw}"
@@ -1225,7 +1225,7 @@ label talk_using_computers_healthily:
     extend 3fnmfl " This one's easily the most important,{w=0.2} so listen up!"
     n 4tllfl "Don't get the wrong idea,{w=0.2} [player] -{w=0.5}{nw}"
     extend 4tsqfl " obviously you're gonna know your limits better than I do."
-    n 2tlrpu "But...{w=1}{nw}" 
+    n 2tlrpu "But...{w=1}{nw}"
     extend 2tnmbo " if you start feeling kinda weird or sick,{w=0.2} or your eyes start hurting or something while you're around?"
     n 2cllaj "Just..."
     n 1cdlsll "..."
@@ -1241,7 +1241,7 @@ label talk_using_computers_healthily:
     n 3tnmbo "It isn't like you're going to pull some kind of miracle if you try and push through it all."
     n 3ccsaj "All you're gonna achieve is make yourself feel like crap for even longer.{w=0.75}{nw}"
     extend 3fcsca " It's totally pointless."
-    
+
     if Natsuki.isEnamored(higher=True):
         n 2cllca "...And besides,{w=0.2} [player]."
         n 2cllpulsbl "You know I'm not going to get mad or anything if you have to take a rain check on our time together..."
@@ -1250,10 +1250,10 @@ label talk_using_computers_healthily:
         n 2ccsfllesisbl "..."
         n 2cnmsll "...Look."
         n 1fcspul "I...{w=1}{nw}"
-        
+
         if Natsuki.isLove(higher=True):
             extend 1ncspul " really...{w=1}{nw}"
-        
+
         $ chosen_descriptor = jn_utils.getRandomEndearment() if Natsuki.isLove(higher=True) else player
         extend 4csrbol " care about you,{w=0.2} [chosen_descriptor].{w=0.75}{nw}"
         extend 5cnmbol " You should seriously know that by now."
@@ -1298,9 +1298,9 @@ init 5 python:
             persistent._topic_database,
             label="talk_staying_active",
             unlocked=True,
-            prompt="Staying active",
+            prompt=__("Staying active"),
             conditional="persistent.jn_total_visit_count >= 5",
-            category=["Life", "You", "Health"],
+            category=[__("Life"), __("You"), __("Health")],
             nat_says=True,
             affinity_range=(jn_affinity.HAPPY, None),
             location="classroom"
@@ -1323,12 +1323,12 @@ label talk_staying_active:
         extend 1fcsbs " Don't you remember?{w=0.75}{nw}"
         extend 4fcssmesm " Did you totally forget or something {i}already{/i}?"
         n 3fcsbs "Well,{w=0.2} too bad!"
-        n 7flrbg "Last time I checked,{w=0.5}{nw}" 
+        n 7flrbg "Last time I checked,{w=0.5}{nw}"
         extend 3fsqbg " you still had to be sitting around on your butt to actually spend any time with me.{w=0.75}{nw}"
-        extend 3cllaj " So..." 
+        extend 3cllaj " So..."
         n 7csqsm "As far as I'm concerned?"
         n 6fcsbg "I {i}totally{/i} reserve the right to grill you about it whenever I want!"
-        
+
         if Natsuki.isEnamored(higher=True):
             n 3ccsbgl "Besides,{w=0.2} [player].{w=0.75}{nw}"
             extend 4clrsslsbl " We both know {i}someone{/i} has to keep an eye on you.{w=0.75}{nw}"
@@ -1343,7 +1343,7 @@ label talk_staying_active:
             n 2ccsbg "Someone has to keep tabs and make sure you aren't just slacking off,{w=0.5}{nw}"
             extend 2csqpo " or laying around like a potato for hours."
             n 5ccsaj "A-{w=0.2}anyway.{w=0.75}{nw}"
-            
+
         else:
             n 4fsqsm "Ehehe."
             n 4fllbg "Well,{w=0.2} whatever.{w=0.75}{nw}"
@@ -1381,7 +1381,7 @@ label talk_staying_active:
     n 7tnmbo "Then we'd just have to pack up our stuff and go to whichever room had all the equipment."
     n 3csqem "...And you could guarantee it was always at some random end of the building too.{w=0.75}{nw}"
     extend 4csrem " Gross."
-    n 4clraj "So with all the constant trekking around the classrooms,{w=0.5}{nw}" 
+    n 4clraj "So with all the constant trekking around the classrooms,{w=0.5}{nw}"
     extend 2csgfl " {i}and{/i} the lame excuse for a lunch break we got?"
     n 2cllfl "Well..."
     n 1ccsaj "Let's just say that you were {i}definitely{/i} gonna be staying in shape one way or another."
@@ -1394,7 +1394,7 @@ label talk_staying_active:
     extend 4cllajsbr " don't get me wrong -{w=0.5}{nw}"
     extend 2ccsposbr " it isn't like I'm just moaning for the sake of it!"
     n 2cslss "And it {i}was{/i} pretty cool being able to stay in decent shape without dumping all my time and money at the gym..."
-    
+
     if get_topic("talk_skateboarding").shown_count > 0:
         n 4cllbo "...Especially if I was already trying to save for something else,{w=0.2} like I said before.{w=0.75}{nw}"
         extend 4cdlss " With the skateboard and all."
@@ -1403,10 +1403,10 @@ label talk_staying_active:
             n 5cllflsbl "Plus all the work placement stuff later on."
 
         n 2fcstrlsbr "N-{w=0.2}not that it made it any less of a pain in the backside,{w=0.2} obviously."
-    
+
     else:
         n 2cslfl "...Even if it was a complete pain in the backside."
-    
+
     n 2cllca "..."
     n 2tllpu "But...{w=1}{nw}"
 
@@ -1429,7 +1429,7 @@ label talk_staying_active:
     extend 7fcsbg " It's just common sense,{w=0.2} [player]."
     n 6fnmbg "Take it from me:{w=0.5}{nw}"
     extend 6ccsbg " you can practically {i}guarantee{/i} it'll have you feeling refreshed and awake in no time!"
-    
+
     if Natsuki.isEnamored(higher=True):
         n 2ulrbg "And hey,{w=0.2} who knows?{w=0.75}{nw}"
         extend 4tsgbg " If you {i}actually{/i} put enough effort into it?"
@@ -1455,7 +1455,7 @@ label talk_staying_active:
         if Natsuki.isAffectionate(higher=True):
             n 3fchgn "We'll make an active-living pro out of you in no time!"
             n 6fchbgedz "You're welcome,{w=0.2} [player]!"
-        
+
         else:
             n 3fcsbs "We'll have those legs of yours moving for once in no time!"
             n 7fcsbgesm "Better remember to thank me later,{w=0.2} [player]!"
@@ -1469,8 +1469,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_relieving_stress",
             unlocked=True,
-            prompt="Relieving stress",
-            category=["Life", "You", "Health"],
+            prompt=__("Relieving stress"),
+            category=[__("Life"), __("You"), __("Health")],
             nat_says=True,
             affinity_range=(jn_affinity.HAPPY, None),
             location="classroom"
@@ -1510,8 +1510,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_careful_spending",
             unlocked=True,
-            prompt="Careful spending",
-            category=["Life", "You", "Health", "Society"],
+            prompt=__("Careful spending"),
+            category=[__("Life"), __("You"), __("Health"), __("Society")],
             nat_says=True,
             affinity_range=(jn_affinity.HAPPY, None),
             location="classroom"
@@ -1560,8 +1560,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_eating_well",
             unlocked=True,
-            prompt="Eating well",
-            category=["Life", "You", "Health", "Food"],
+            prompt=__("Eating well"),
+            category=[__("Life"), __("You"), __("Health"), __("Food")],
             nat_says=True,
             affinity_range=(jn_affinity.HAPPY, None),
             location="classroom"
@@ -1620,8 +1620,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_weather_setup_main",
             unlocked=True,
-            prompt="Setting up the weather",
-            category=["Setup", "Weather"],
+            prompt=__("Setting up the weather"),
+            category=[__("Setup"), __("Weather")],
             nat_says=True,
             affinity_range=(jn_affinity.HAPPY, None),
             location="classroom"
@@ -2199,8 +2199,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_favourite_season",
             unlocked=True,
-            prompt="What's your favorite season?",
-            category=["Weather", "Nature"],
+            prompt=__("What's your favorite season?"),
+            category=[__("Weather"), __("Nature")],
             player_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
             location="classroom"
@@ -2435,8 +2435,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_time_management",
             unlocked=True,
-            prompt="Time management",
-            category=["Life"],
+            prompt=__("Time management"),
+            category=[__("Life")],
             nat_says=True,
             affinity_range=(jn_affinity.AFFECTIONATE, None),
             location="classroom"
@@ -2482,8 +2482,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_sweet_tooth",
             unlocked=True,
-            prompt="Do you have a sweet tooth?",
-            category=["Health", "Food"],
+            prompt=__("Do you have a sweet tooth?"),
+            category=[__("Health"), __("Food")],
             player_says=True,
             affinity_range=(jn_affinity.DISTRESSED, None),
             location="classroom"
@@ -2552,8 +2552,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_player_appearance",
             unlocked=True,
-            prompt="My appearance",
-            category=["You"],
+            prompt=__("My appearance"),
+            category=[__("You")],
             player_says=True,
             affinity_range=(jn_affinity.ENAMORED, None),
             location="classroom"
@@ -2915,8 +2915,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_drinking_alcohol",
             unlocked=True,
-            prompt="Do you drink alcohol?",
-            category=["Food", "Health"],
+            prompt=__("Do you drink alcohol?"),
+            category=[__("Food"), __("Health")],
             player_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
             location="classroom"
@@ -2994,8 +2994,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_driving",
             unlocked=True,
-            prompt="Can you drive?",
-            category=["Transport"],
+            prompt=__("Can you drive?"),
+            category=[__("Transport")],
             player_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
             location="classroom"
@@ -3161,8 +3161,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_sustainable_fashion",
             unlocked=True,
-            prompt="Sustainable fashion",
-            category=["Environment", "Fashion"],
+            prompt=__("Sustainable fashion"),
+            category=[__("Environment"), __("Fashion")],
             nat_says=True,
             affinity_range=(jn_affinity.UPSET, None),
             location="classroom"
@@ -3229,9 +3229,9 @@ init 5 python:
             persistent._topic_database,
             label="talk_give_nickname",
             unlocked=True,
-            prompt="Can I give you a nickname?",
+            prompt=__("Can I give you a nickname?"),
             conditional="persistent._jn_nicknames_natsuki_allowed",
-            category=["Natsuki"],
+            category=[__("Natsuki")],
             player_says=True,
             affinity_range=(jn_affinity.ENAMORED, None),
             location="classroom"
@@ -3465,9 +3465,9 @@ init 5 python:
             persistent._topic_database,
             label="talk_sleeping_well",
             unlocked=True,
-            prompt="Sleeping well",
+            prompt=__("Sleeping well"),
             conditional="persistent.jn_total_visit_count >= 5",
-            category=["Health", "You"],
+            category=[__("Health"), __("You")],
             nat_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
             location="classroom"
@@ -3542,8 +3542,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_aging",
             unlocked=True,
-            prompt="Aging",
-            category=["Life"],
+            prompt=__("Aging"),
+            category=[__("Life")],
             nat_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
             location="classroom"
@@ -3611,8 +3611,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_work_life_balance",
             unlocked=True,
-            prompt="Work-life balance",
-            category=["Life", "Society"],
+            prompt=__("Work-life balance"),
+            category=[__("Life"), __("Society")],
             nat_says=True,
             location="classroom"
         ),
@@ -3689,8 +3689,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_using_headphones_carefully",
             unlocked=True,
-            prompt="Using headphones carefully",
-            category=["Health", "Music", "Technology"],
+            prompt=__("Using headphones carefully"),
+            category=[__("Health"), __("Music"), __("Technology")],
             nat_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
             location="classroom"
@@ -3738,8 +3738,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_thoughts_on_horror",
             unlocked=True,
-            prompt="Thoughts on horror",
-            category=["Media", "Literature"],
+            prompt=__("Thoughts on horror"),
+            category=[__("Media"), __("Literature")],
             nat_says=True,
             location="classroom"
         ),
@@ -3813,8 +3813,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_gaming",
             unlocked=True,
-            prompt="Are you into video games?",
-            category=["Games", "Media"],
+            prompt=__("Are you into video games?"),
+            category=[__("Games"), __("Media")],
             player_says=True,
             location="classroom"
         ),
@@ -3919,8 +3919,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_natsukis_fang",
             unlocked=True,
-            prompt="[n_name]'s fang",
-            category=["Natsuki"],
+            prompt=__("[n_name]'s fang"),
+            category=[__("Natsuki")],
             nat_says=True,
             affinity_range=(jn_affinity.HAPPY, None),
             location="classroom"
@@ -3983,8 +3983,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_i_love_you",
             unlocked=True,
-            prompt="I love you, {0}!".format(n_name),
-            category=["Natsuki", "Romance"],
+            prompt=__("I love you, {0}!").format(n_name),
+            category=[__("Natsuki"), __("Romance")],
             player_says=True,
             location="classroom",
             affinity_range=(jn_affinity.ENAMORED, None)
@@ -4149,7 +4149,7 @@ label talk_i_love_you:
             n 1fcsantsd "..."
             n 1fsqfutse "Go!"
             n 4fscsctdc "{i}JUST LEAVE ME ALONE!{/i}{nw}"
-            
+
             $ Natsuki.percentageAffinityLoss(25)
             $ Natsuki.setForceQuitAttempt(False)
             $ persistent.jn_player_love_you_count += 1
@@ -4409,8 +4409,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_natsukis_hairstyle",
             unlocked=True,
-            prompt="Why do you style your hair like that?",
-            category=["Fashion"],
+            prompt=__("Why do you style your hair like that?"),
+            category=[__("Fashion")],
             player_says=True,
             location="classroom"
         ),
@@ -4533,8 +4533,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_integrity",
             unlocked=True,
-            prompt="Having integrity",
-            category=["Society", "You"],
+            prompt=__("Having integrity"),
+            category=[__("Society"), __("You")],
             nat_says=True,
             affinity_range=(jn_affinity.HAPPY, None),
             location="classroom"
@@ -4592,8 +4592,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_favourite_animal",
             unlocked=True,
-            prompt="What's your favorite animal?",
-            category=["Animals", "Nature"],
+            prompt=__("What's your favorite animal?"),
+            category=[__("Animals"), __("Nature")],
             player_says=True,
             location="classroom"
         ),
@@ -4653,8 +4653,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_favourite_drink",
             unlocked=True,
-            prompt="What's your favorite drink?",
-            category=["Food"],
+            prompt=__("What's your favorite drink?"),
+            category=[__("Food")],
             player_says=True,
             location="classroom"
         ),
@@ -4731,8 +4731,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_school_uniform",
             unlocked=True,
-            prompt="What do you think of your school uniform?",
-            category=["Fashion"],
+            prompt=__("What do you think of your school uniform?"),
+            category=[__("Fashion")],
             player_says=True,
             location="classroom"
         ),
@@ -4840,8 +4840,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_flying",
             unlocked=True,
-            prompt="Have you ever flown anywhere?",
-            category=["Transport"],
+            prompt=__("Have you ever flown anywhere?"),
+            category=[__("Transport")],
             player_says=True,
             location="classroom"
         ),
@@ -4949,8 +4949,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_are_you_into_cars",
             unlocked=True,
-            prompt="Are you into cars?",
-            category=["Transport"],
+            prompt=__("Are you into cars?"),
+            category=[__("Transport")],
             player_says=True,
             location="classroom"
         ),
@@ -5062,8 +5062,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_how_do_you_feel_about_me",
             unlocked=True,
-            prompt="How do you feel about me?",
-            category=["Natsuki", "Romance", "You"],
+            prompt=__("How do you feel about me?"),
+            category=[__("Natsuki"), __("Romance"), __("You")],
             player_says=True,
             location="classroom"
         ),
@@ -5179,8 +5179,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_are_you_into_cosplay",
             unlocked=True,
-            prompt="Are you into cosplay?",
-            category=["Fashion", "Media", "Society"],
+            prompt=__("Are you into cosplay?"),
+            category=[__("Fashion"), __("Media"), __("Society")],
             player_says=True,
             location="classroom"
         ),
@@ -5484,8 +5484,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_why_do_you_like_me",
             unlocked=True,
-            prompt="Why do you like me?",
-            category=["Natsuki", "Romance", "You"],
+            prompt=__("Why do you like me?"),
+            category=[__("Natsuki"), __("Romance"), __("You")],
             player_says=True,
             affinity_range=(jn_affinity.AFFECTIONATE, None),
             location="classroom"
@@ -5637,8 +5637,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_fried_squid",
             unlocked=True,
-            prompt="Fried squid",
-            category=["DDLC", "Food"],
+            prompt=__("Fried squid"),
+            category=[__("DDLC"), __("Food")],
             nat_says=True,
             affinity_range=(jn_affinity.HAPPY, None),
             location="classroom"
@@ -5701,8 +5701,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_collectibles",
             unlocked=True,
-            prompt="Do you have any collectibles?",
-            category=["Media"],
+            prompt=__("Do you have any collectibles?"),
+            category=[__("Media")],
             player_says=True,
             location="classroom"
         ),
@@ -5794,9 +5794,9 @@ init 5 python:
             persistent._topic_database,
             label="talk_play_snap",
             unlocked=True,
-            prompt="Do you want to play Snap?",
+            prompt=__("Do you want to play Snap?"),
             conditional="persistent.jn_snap_unlocked",
-            category=["Games"],
+            category=[__("Games")],
             player_says=True,
             affinity_range=(jn_affinity.HAPPY, None),
             location="classroom"
@@ -5811,11 +5811,11 @@ label talk_play_snap:
             $ persistent.jn_snap_player_is_cheater = False
 
         else:
-            n 1ccsem "[player]..." 
-            n 2cllfl "If you aren't even sorry you cheated,{w=0.5}{nw}" 
+            n 1ccsem "[player]..."
+            n 2cllfl "If you aren't even sorry you cheated,{w=0.5}{nw}"
             extend 2csqfl " why {i}should{/i} I play with you again?"
-            n 4fcssl "Come on...{w=1}{nw}" 
-            extend 2csrca " it's not hard to apologize,{w=0.75}{nw}" 
+            n 4fcssl "Come on...{w=1}{nw}"
+            extend 2csrca " it's not hard to apologize,{w=0.75}{nw}"
             extend 2csqca " is it?"
 
             return
@@ -5830,11 +5830,11 @@ label talk_play_snap:
         extend 4fchbg " Sure thing,{w=0.2} [player]!"
 
     elif Natsuki.isAffectionate(higher=True):
-        n 1fcsbg "Well,{w=0.2} duh!{w=0.75}" 
+        n 1fcsbg "Well,{w=0.2} duh!{w=0.75}"
         extend 2fchbg " Say no more,{w=0.2} [player]!"
 
     else:
-        n 1unmaj "You wanna play Snap?{w=0.75}{nw}" 
+        n 1unmaj "You wanna play Snap?{w=0.75}{nw}"
         extend 4fchsm " Sure!"
 
     if Natsuki.getDeskItemReferenceName(jn_desk_items.JNDeskSlots.right) == "jn_card_pack":
@@ -5862,9 +5862,9 @@ init 5 python:
             persistent._topic_database,
             label="talk_remind_snap_rules",
             unlocked=True,
-            prompt="Can you go over the rules of Snap again?",
+            prompt=__("Can you go over the rules of Snap again?"),
             conditional="persistent.jn_snap_unlocked and persistent.jn_snap_explanation_given",
-            category=["Games"],
+            category=[__("Games")],
             player_says=True,
             affinity_range=(jn_affinity.HAPPY, None),
             location="classroom"
@@ -5905,8 +5905,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_windup_chewing_gum",
             unlocked=True,
-            prompt="Chewing gum",
-            category=["Wind-ups"],
+            prompt=__("Chewing gum"),
+            category=[__("Wind-ups")],
             nat_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
             location="classroom"
@@ -5948,8 +5948,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_windup_smoking_vaping_indoors",
             unlocked=True,
-            prompt="Indoor smoking",
-            category=["Wind-ups"],
+            prompt=__("Indoor smoking"),
+            category=[__("Wind-ups")],
             nat_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
             location="classroom"
@@ -5999,8 +5999,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_windup_unwashed_hands",
             unlocked=True,
-            prompt="Handwashing",
-            category=["Wind-ups"],
+            prompt=__("Handwashing"),
+            category=[__("Wind-ups")],
             nat_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
             location="classroom"
@@ -6042,8 +6042,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_windup_litter",
             unlocked=True,
-            prompt="Littering",
-            category=["Wind-ups"],
+            prompt=__("Littering"),
+            category=[__("Wind-ups")],
             nat_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
             location="classroom"
@@ -6109,7 +6109,7 @@ init 5 python:
             persistent._topic_database,
             label="talk_custom_music_introduction",
             unlocked=True,
-            prompt="Music player",
+            prompt=__("Music player"),
             conditional="not persistent.jn_custom_music_unlocked",
             nat_says=True,
             affinity_range=(jn_affinity.HAPPY, None),
@@ -6211,8 +6211,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_custom_music_explanation",
             unlocked=True,
-            prompt="Can you explain custom music for me again?",
-            category=["Music"],
+            prompt=__("Can you explain custom music for me again?"),
+            category=[__("Music")],
             conditional="persistent.jn_custom_music_unlocked and persistent.jn_custom_music_explanation_given",
             player_says=True,
             affinity_range=(jn_affinity.HAPPY, None),
@@ -6249,17 +6249,17 @@ label talk_custom_music_explanation:
 
     $ custom_music_link_path = jn_custom_music.CUSTOM_MUSIC_DIRECTORY
     if renpy.windows:
-        n 1unmaj "So,{w=0.1} [player] -{w=0.3}{nw}" 
-        extend 1ullaj " if you click {a=[custom_music_link_path]}here{/a},{w=0.2}{nw}" 
+        n 1unmaj "So,{w=0.1} [player] -{w=0.3}{nw}"
+        extend 1ullaj " if you click {a=[custom_music_link_path]}here{/a},{w=0.2}{nw}"
         extend 1fcsss " that'll take you to the folder I set up."
         n 1fchbg "Then all you gotta do is just {i}copy{/i} your music into that folder,{w=0.2} and you're good to go!"
 
     else:
-        n 1unmaj "So,{w=0.1} [player] -{w=0.3}{nw}" 
-        extend 1ullaj " you should be able to find the folder I set up at {i}[custom_music_link_path]{/i}." 
+        n 1unmaj "So,{w=0.1} [player] -{w=0.3}{nw}"
+        extend 1ullaj " you should be able to find the folder I set up at {i}[custom_music_link_path]{/i}."
         n 1fchbg "All you gotta do is just {i}copy{/i} your music into that folder,{w=0.2} and you're good to go!"
 
-    n 2uchgn "Easy as pie,{w=0.1} huh?{w=0.5}{nw}" 
+    n 2uchgn "Easy as pie,{w=0.1} huh?{w=0.5}{nw}"
     extend 2fchsm " Ehehe."
     n 4uwdaj "Oh -{w=0.1} a couple of things first though,{w=0.1} [player]."
     n 1unmpu "Any music you give me needs to be in {i}.mp3,{w=0.1} .ogg or .wav{/i} format."
@@ -6289,8 +6289,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_vtubers",
             unlocked=True,
-            prompt="Do you follow any VTubers?",
-            category=["Games", "Media", "Society"],
+            prompt=__("Do you follow any VTubers?"),
+            category=[__("Games"), __("Media"), __("Society")],
             player_says=True,
             location="classroom"
         ),
@@ -6353,8 +6353,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_skateboarding",
             unlocked=True,
-            prompt="Are you into skateboarding?",
-            category=["Transport"],
+            prompt=__("Are you into skateboarding?"),
+            category=[__("Transport")],
             player_says=True,
             location="classroom"
         ),
@@ -6473,8 +6473,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_sports",
             unlocked=True,
-            prompt="Do you play much sports?",
-            category=["Health"],
+            prompt=__("Do you play much sports?"),
+            category=[__("Health")],
             player_says=True,
             location="classroom"
         ),
@@ -6557,8 +6557,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_online_shopping",
             unlocked=True,
-            prompt="Online shopping",
-            category=["Society"],
+            prompt=__("Online shopping"),
+            category=[__("Society")],
             nat_says=True,
             location="classroom"
         ),
@@ -6635,8 +6635,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_windup_subscriptions",
             unlocked=True,
-            prompt="Subscriptions",
-            category=["Wind-ups"],
+            prompt=__("Subscriptions"),
+            category=[__("Wind-ups")],
             nat_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
             location="classroom"
@@ -6707,12 +6707,12 @@ init 5 python:
             persistent._topic_database,
             label="talk_mod_contributions",
             unlocked=True,
-            prompt="Contributions",
+            prompt=__("Contributions"),
             conditional=(
                 "not jn_activity.ACTIVITY_SYSTEM_ENABLED "
                 "or jn_activity.ACTIVITY_MANAGER.hasPlayerDoneActivity(jn_activity.JNActivities.coding)"
             ),
-            category=["Mod"],
+            category=[__("Mod")],
             nat_says=True,
             affinity_range=(jn_affinity.AFFECTIONATE, None),
             location="classroom"
@@ -6776,9 +6776,9 @@ init 5 python:
             persistent._topic_database,
             label="talk_realizations_player_ddlc_actions",
             unlocked=True,
-            prompt="DDLC memories",
+            prompt=__("DDLC memories"),
             conditional="jn_utils.get_total_gameplay_length().total_seconds() / 60 >= 30",
-            category=["DDLC", "Natsuki", "You"],
+            category=[__("DDLC"), __("Natsuki"), __("You")],
             nat_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
             location="classroom"
@@ -6900,12 +6900,12 @@ init 5 python:
             persistent._topic_database,
             label="talk_realizations_other_girls",
             unlocked=True,
-            prompt="Monika and the other girls",
+            prompt=__("Monika and the other girls"),
             conditional=(
                 "jn_utils.get_total_gameplay_length().total_seconds() / 3600 >= 12 "
                 "and get_topic('talk_realizations_player_ddlc_actions').shown_count > 0"
             ),
-            category=["DDLC", "Natsuki"],
+            category=[__("DDLC"), __("Natsuki")],
             nat_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
             location="classroom"
@@ -6985,13 +6985,13 @@ init 5 python:
             persistent._topic_database,
             label="talk_realizations_space_classroom",
             unlocked=True,
-            prompt="Leaving the space classroom",
+            prompt=__("Leaving the space classroom"),
             conditional=(
                 "jn_utils.get_total_gameplay_length().total_seconds() / 3600 >= 24 "
                 "and get_topic('talk_realizations_player_ddlc_actions').shown_count > 0 "
                 "and get_topic('talk_realizations_other_girls').shown_count > 0"
             ),
-            category=["DDLC", "Natsuki", "You"],
+            category=[__("DDLC"), __("Natsuki"), __("You")],
             nat_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
             location="classroom"
@@ -7037,8 +7037,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_fear_of_lightning",
             unlocked=True,
-            prompt="Are you afraid of lightning?",
-            category=["Fears", "Weather"],
+            prompt=__("Are you afraid of lightning?"),
+            category=[__("Fears"), __("Weather")],
             player_says=True,
             location="classroom"
         ),
@@ -7160,9 +7160,9 @@ init 5 python:
             persistent._topic_database,
             label="talk_fighting_drowsiness",
             unlocked=True,
-            prompt="Drowsiness",
+            prompt=__("Drowsiness"),
             conditional="jn_utils.get_total_gameplay_length().total_seconds() / 3600 >= 12",
-            category=["Health"],
+            category=[__("Health")],
             nat_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
             location="classroom"
@@ -7263,9 +7263,9 @@ init 5 python:
             persistent._topic_database,
             label="talk_fear_of_spiders",
             unlocked=True,
-            prompt="Are you afraid of spiders?",
+            prompt=__("Are you afraid of spiders?"),
             conditional="jn_utils.get_total_gameplay_length().total_seconds() / 3600 >= 24",
-            category=["Animals", "Fears"],
+            category=[__("Animals"), __("Fears")],
             player_says=True,
             location="classroom"
         ),
@@ -7372,9 +7372,9 @@ init 5 python:
             persistent._topic_database,
             label="talk_thoughts_on_dan_salvato",
             unlocked=True,
-            prompt="What do you think of Dan Salvato?",
+            prompt=__("What do you think of Dan Salvato?"),
             conditional="jn_utils.get_total_gameplay_length().total_seconds() / 3600 >= 48",
-            category=["DDLC", "Natsuki"],
+            category=[__("DDLC"), __("Natsuki")],
             player_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
             location="classroom"
@@ -7445,7 +7445,7 @@ init 5 python:
             persistent._topic_database,
             label="talk_custom_outfits_unlock",
             unlocked=True,
-            prompt="Custom outfits",
+            prompt=__("Custom outfits"),
             conditional="jn_utils.get_total_gameplay_length().total_seconds() / 3600 >= 48 and not persistent.jn_custom_outfits_unlocked",
             nat_says=True,
             affinity_range=(jn_affinity.HAPPY, None),
@@ -7526,8 +7526,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_maintaining_proper_hygiene",
             unlocked=True,
-            prompt="Proper hygiene",
-            category=["Health", "You"],
+            prompt=__("Proper hygiene"),
+            category=[__("Health"), __("You")],
             nat_says=True,
             affinity_range=(jn_affinity.AFFECTIONATE, None),
             location="classroom"
@@ -7683,8 +7683,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_feelings_about_monika",
             unlocked=True,
-            prompt="How do you feel about Monika?",
-            category=["DDLC"],
+            prompt=__("How do you feel about Monika?"),
+            category=[__("DDLC")],
             player_says=True,
             affinity_range=(jn_affinity.AFFECTIONATE, None),
             location="classroom"
@@ -7752,8 +7752,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_feelings_about_yuri",
             unlocked=True,
-            prompt="How do you feel about Yuri?",
-            category=["DDLC"],
+            prompt=__("How do you feel about Yuri?"),
+            category=[__("DDLC")],
             player_says=True,
             affinity_range=(jn_affinity.AFFECTIONATE, None),
             location="classroom"
@@ -7834,8 +7834,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_feelings_about_sayori",
             unlocked=True,
-            prompt="How do you feel about Sayori?",
-            category=["DDLC"],
+            prompt=__("How do you feel about Sayori?"),
+            category=[__("DDLC")],
             player_says=True,
             affinity_range=(jn_affinity.AFFECTIONATE, None),
             location="classroom"
@@ -7884,9 +7884,9 @@ init 5 python:
             persistent._topic_database,
             label="talk_thoughts_on_tea",
             unlocked=True,
-            prompt="Do you drink much tea?",
+            prompt=__("Do you drink much tea?"),
             conditional="jn_utils.get_total_gameplay_length().total_seconds() / 3600 >= 36",
-            category=["Food"],
+            category=[__("Food")],
             player_says=True,
             location="classroom"
         ),
@@ -8095,8 +8095,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_how_to_make_friends",
             unlocked=True,
-            prompt="How do I make friends?",
-            category=["Life", "Society", "You"],
+            prompt=__("How do I make friends?"),
+            category=[__("Life"), __("Society"), __("You")],
             player_says=True,
             affinity_range=(jn_affinity.HAPPY, None),
             location="classroom"
@@ -8206,9 +8206,9 @@ init 5 python:
             persistent._topic_database,
             label="talk_impressions_of_the_other_girls",
             unlocked=True,
-            prompt="Can you do any impressions of the other girls?",
+            prompt=__("Can you do any impressions of the other girls?"),
             conditional="jn_utils.get_total_gameplay_length().total_seconds() / 3600 >= 48",
-            category=["DDLC"],
+            category=[__("DDLC")],
             player_says=True,
             location="classroom"
         ),
@@ -8327,8 +8327,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_newspapers_and_bias",
             unlocked=True,
-            prompt="Newspapers and bias",
-            category=["Literature", "Media", "Society"],
+            prompt=__("Newspapers and bias"),
+            category=[__("Literature"), __("Media"), __("Society")],
             nat_says=True,
             affinity_range=(jn_affinity.HAPPY, None),
             location="classroom"
@@ -8395,9 +8395,9 @@ init 5 python:
             persistent._topic_database,
             label="talk_fear_of_flying",
             unlocked=True,
-            prompt="Are you afraid of flying?",
+            prompt=__("Are you afraid of flying?"),
             conditional="jn_utils.get_total_gameplay_days() >= 7",
-            category=["Fears", "Transport"],
+            category=[__("Fears"), __("Transport")],
             player_says=True,
             location="classroom"
         ),
@@ -8495,9 +8495,9 @@ init 5 python:
             persistent._topic_database,
             label="talk_what_do_you_think_about_fanart",
             unlocked=True,
-            prompt="What do you think about fanart?",
+            prompt=__("What do you think about fanart?"),
             conditional="jn_utils.get_total_gameplay_days() >= 3",
-            category=["Art", "Media"],
+            category=[__("Art"), __("Media")],
             player_says=True,
             location="classroom"
         ),
@@ -8600,9 +8600,9 @@ init 5 python:
             persistent._topic_database,
             label="talk_how_to_interview_properly",
             unlocked=True,
-            prompt="How to interview properly",
+            prompt=__("How to interview properly"),
             conditional="jn_utils.get_total_gameplay_days() >= 5",
-            category=["Life", "Society"],
+            category=[__("Life"), __("Society")],
             nat_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
             location="classroom"
@@ -8734,8 +8734,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_windup_bullying",
             unlocked=True,
-            prompt="Bullying",
-            category=["Society", "Wind-ups"],
+            prompt=__("Bullying"),
+            category=[__("Society"), __("Wind-ups")],
             nat_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
             location="classroom"
@@ -8826,9 +8826,9 @@ init 5 python:
             persistent._topic_database,
             label="talk_player_change_name",
             unlocked=True,
-            prompt="Can you call me something else?",
+            prompt=__("Can you call me something else?"),
             conditional="persistent._jn_nicknames_player_allowed",
-            category=["You"],
+            category=[__("You")],
             player_says=True,
             affinity_range=(jn_affinity.ENAMORED, None),
             location="classroom"
@@ -9084,8 +9084,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_players_birthday_intro",
             unlocked=True,
-            prompt="My birthday",
-            category=["You"],
+            prompt=__("My birthday"),
+            category=[__("You")],
             player_says=True,
             affinity_range=(jn_affinity.AFFECTIONATE, None),
             location="classroom"
@@ -9378,7 +9378,7 @@ label talk_players_birthday_outro:
     extend 2nsqpol " Don't make me say it twice."
 
     $ persistent._jn_natsuki_birthday_known = True
-    
+
     n 1nllpu "And...{w=1}{nw}"
     extend 4tnmbo " [player]?"
     n 1fsqss "I hope you know that you better prepare yourself."
@@ -9397,14 +9397,14 @@ init 5 python:
             persistent._topic_database,
             label="talk_can_i_see_a_poem",
             unlocked=True,
-            prompt="Can I see a poem you've written for me?",
+            prompt=__("Can I see a poem you've written for me?"),
             conditional=(
                 "len(jn_poems.JNPoem.filterPoems("
                     "jn_poems.getAllPoems(),"
                     "unlocked=True"
                 ")) > 0"
             ),
-            category=["Literature"],
+            category=[__("Literature")],
             player_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
             location="classroom"
@@ -9521,8 +9521,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_chocolate_preference",
             unlocked=True,
-            prompt="What sort of chocolate do you prefer?",
-            category=["Food"],
+            prompt=__("What sort of chocolate do you prefer?"),
+            category=[__("Food")],
             player_says=True,
             location="classroom"
         ),
@@ -9737,8 +9737,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_learning_languages",
             unlocked=True,
-            prompt="Learning languages",
-            category=["Society"],
+            prompt=__("Learning languages"),
+            category=[__("Society")],
             nat_says=True,
             affinity_range=(jn_affinity.HAPPY, None),
             location="classroom"
@@ -9924,8 +9924,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_rage_rooms",
             unlocked=True,
-            prompt="Rage rooms",
-            category=["Entertainment", "Hobbies"],
+            prompt=__("Rage rooms"),
+            category=[__("Entertainment"), __("Hobbies")],
             nat_says=True,
             affinity_range=(jn_affinity.HAPPY, None),
             location="classroom"
@@ -10008,9 +10008,9 @@ init 5 python:
             persistent._topic_database,
             label="talk_take_down_deco",
             unlocked=True,
-            prompt="Can you tidy away the decorations for me?",
+            prompt=__("Can you tidy away the decorations for me?"),
             conditional="len(store.persistent._jn_holiday_deco_list_on_quit) > 0",
-            category=["Holidays"],
+            category=[__("Holidays")],
             player_says=True,
             affinity_range=(jn_affinity.HAPPY, None),
             location="classroom"
@@ -10062,9 +10062,9 @@ init 5 python:
             persistent._topic_database,
             label="talk_thoughts_on_vegetarianism",
             unlocked=True,
-            prompt="What do you think about vegetarianism?",
+            prompt=__("What do you think about vegetarianism?"),
             conditional="jn_utils.get_total_gameplay_hours() >= 4",
-            category=["Food", "Society"],
+            category=[__("Food"), __("Society")],
             player_says=True,
             location="classroom"
         ),
@@ -10217,9 +10217,9 @@ init 5 python:
             persistent._topic_database,
             label="talk_staying_motivated",
             unlocked=True,
-            prompt="Staying motivated",
+            prompt=__("Staying motivated"),
             conditional="jn_utils.get_total_gameplay_hours() >= 4",
-            category=["Life"],
+            category=[__("Life")],
             affinity_range=(jn_affinity.NORMAL, None),
             nat_says=True,
             location="classroom"
@@ -10353,7 +10353,7 @@ label talk_daily_jokes_unlock:
 
     elif Natsuki.isAffectionate(higher=True):
         extend 2fcsajlsbl " I-{w=0.2}I totally do!{w=1}{nw}"
-        
+
     else:
         extend 4fcsemsbl " O-{w=0.2}of course I do!"
         n 2fcspo "Even if you {i}do{/i} kinda owe it to me.{w=1}{nw}"
@@ -10427,7 +10427,7 @@ label talk_daily_jokes_unlock:
     n "...!"
 
     $ jnPause(2)
-    
+
     show natsuki 1fcssmeme
     play audio chair_in
     $ jnPause(1.5)
@@ -10473,7 +10473,7 @@ label talk_daily_jokes_unlock:
     extend 1fchbg " No reason to overdo it."
     n 1fsqss "Sounds like a plan,{w=0.2} [player]?{w=0.75}{nw}"
     extend 1fcsss " Of course it does."
-    n 1fcsgs "So!{w=0.5}{nw}" 
+    n 1fcsgs "So!{w=0.5}{nw}"
     extend 1fcsbg " You better start looking forward to it..."
     n 1fchgn "'Cause I {i}definitely{/i} am!{w=1}{nw}"
     extend 1nchgn " Ehehe."
@@ -10487,7 +10487,7 @@ label talk_daily_jokes_unlock:
 
     $ persistent._jn_daily_jokes_unlocked = True
     call talk_daily_joke(from_unlock=True)
-    
+
     return
 
 # Natsuki reads out a daily joke.
@@ -10497,7 +10497,7 @@ init 5 python:
             persistent._topic_database,
             label="talk_daily_joke",
             unlocked=True,
-            prompt="Daily joke",
+            prompt=__("Daily joke"),
             conditional="persistent._jn_daily_jokes_unlocked and persistent._jn_daily_jokes_enabled and not persistent._jn_daily_joke_given",
             affinity_range=(jn_affinity.HAPPY, None),
             nat_says=True,
@@ -10575,7 +10575,7 @@ label talk_daily_joke(from_unlock=False):
 
         $ daily_jokes = jn_jokes.getUnseenJokes()
 
-    n 1fcsss "Now,{w=0.75}{nw}" 
+    n 1fcsss "Now,{w=0.75}{nw}"
     extend 1fsqsm " let's see..."
 
     $ Natsuki.setIsReadingToRight(True)
@@ -10661,7 +10661,7 @@ label talk_daily_joke(from_unlock=False):
     $ persistent._jn_daily_joke_given = True
     $ Natsuki.calculatedAffinityGain(bypass=True)
     $ dialogue_choice = random.randint(1, 3)
-    
+
     if daily_joke.joke_category == jn_jokes.JNJokeCategories.funny:
         if dialogue_choice == 1:
             n 1uchgn "See?{w=1}{nw}"
@@ -10761,7 +10761,7 @@ label talk_daily_joke(from_unlock=False):
         else:
             n 1csrfl "...Yeah."
             n 1tlrfl "I...{w=1}{nw}"
-            extend 1csrsssbl " think we're about done with this for today,{w=0.5}{nw}" 
+            extend 1csrsssbl " think we're about done with this for today,{w=0.5}{nw}"
             extend 1cslcasbl " [player]."
 
         show natsuki 1nsrbo
@@ -10803,8 +10803,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_daily_jokes_start",
             unlocked=True,
-            prompt="Can you start telling me daily jokes?",
-            category=["Jokes"],
+            prompt=__("Can you start telling me daily jokes?"),
+            category=[__("Jokes")],
             conditional="persistent._jn_daily_jokes_unlocked and not persistent._jn_daily_jokes_enabled",
             affinity_range=(jn_affinity.HAPPY, None),
             player_says=True,
@@ -10821,7 +10821,7 @@ label talk_daily_jokes_start:
     n 2fsqsmeme "Ehehe."
     n 1fcsss "Well in that case,{w=1}{nw}"
     extend 4fnmss " you better prepare yourself,{w=0.2} [player]."
-    n 3fchgn "'Cause I'm gonna pick out all the {i}extra{/i} corny ones now.{w=1}{nw}" 
+    n 3fchgn "'Cause I'm gonna pick out all the {i}extra{/i} corny ones now.{w=1}{nw}"
     extend 3nchgn " Juuuust for you~!"
 
     if Natsuki.isLove(higher=True):
@@ -10838,8 +10838,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_daily_jokes_stop",
             unlocked=True,
-            prompt="Can you stop telling me daily jokes?",
-            category=["Jokes"],
+            prompt=__("Can you stop telling me daily jokes?"),
+            category=[__("Jokes")],
             conditional="persistent._jn_daily_jokes_unlocked and persistent._jn_daily_jokes_enabled",
             affinity_range=(jn_affinity.HAPPY, None),
             player_says=True,
@@ -10850,7 +10850,7 @@ init 5 python:
 
 label talk_daily_jokes_stop:
     n 1unmem "H-{w=0.3}huh?{w=1}{nw}"
-    extend 4fcseml " Wait,{w=0.5}{nw}" 
+    extend 4fcseml " Wait,{w=0.5}{nw}"
     extend 4fnmeml " what?"
     n 1fcswr "A-{w=0.2}and just what is {i}that{/i} meant to mean,{w=0.2} [player]?!"
     extend 3fnmfl " Huh?"
@@ -10890,8 +10890,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_daily_jokes_seen_before_start",
             unlocked=True,
-            prompt="What jokes have you told me before?",
-            category=["Jokes"],
+            prompt=__("What jokes have you told me before?"),
+            category=[__("Jokes")],
             conditional="persistent._jn_daily_jokes_unlocked and jn_jokes.getShownBeforeJokes() is not None",
             affinity_range=(jn_affinity.HAPPY, None),
             player_says=True,
@@ -10985,7 +10985,7 @@ label talk_daily_jokes_seen_before_loop:
                 n 1tsqss "[joke_choice.display_name],{w=0.2} huh?"
                 n 1fchsm "Ehehe.{w=0.75}{nw}"
                 extend 1fchbg " You got it,{w=0.2} [player]!"
-            
+
             else:
                 n 1uspbg "Oh!{w=0.2} Oh!{w=0.5}{nw}"
                 extend 1uchgn " I love that one!"
@@ -11002,7 +11002,7 @@ label talk_daily_jokes_seen_before_loop:
                 n 1csrem "Man...{w=1}{nw}"
                 extend 1tnmem " you're {i}sure{/i} you wanna hear that one again?{w=0.75}{nw}"
                 extend 1nslsl " Fine."
-            
+
             else:
                 n 1nsqflsbr "...That one {i}again{/i}?{w=0.75}{nw}"
                 extend 1cslemsbr " Jeez..."
@@ -11023,7 +11023,7 @@ label talk_daily_jokes_seen_before_loop:
                 n 1clrfl "Really,{w=0.2} [player]?{w=0.75}{nw}"
                 extend 1csqfl " {i}That{/i} one?"
                 n 1nslposbr "...Fine."
-            
+
             else:
                 n 1fupfl "Ugh...{w=1}{nw}"
                 extend 1cnmfl " for real?"
@@ -11047,7 +11047,7 @@ label talk_daily_jokes_seen_before_loop:
                 n 1tsrbo "...Huh.{w=0.75}{nw}"
                 extend 1tlraj " If you insist.{w=0.75}{nw}"
                 extend 1ccsflsbl " Just don't say I didn't warn you."
-            
+
             else:
                 n 1ccsflsbr "...Wait.{w=0.75}{nw}"
                 extend 1ccsflsbr " [joke_choice.display_name]?{w=0.75}{nw}"
@@ -11066,7 +11066,7 @@ label talk_daily_jokes_seen_before_loop:
             elif dialogue_choice == 2:
                 n 1tnmss "[joke_choice.display_name]?{w=0.75}{nw}"
                 extend 1fcssm " You got it!"
-            
+
             else:
                 n 1udwaj "[joke_choice.display_name]?{w=0.75}{nw}"
                 extend 1unmbo " That one?"
@@ -11094,7 +11094,7 @@ label talk_daily_jokes_seen_before_loop:
                 n 1flrss "Man...{w=1}{nw}"
                 extend 1fchgn " I swear that one never gets old!{w=0.75}{nw}"
                 extend 1nchgnl " Ahaha."
-            
+
             elif dialogue_choice == 2:
                 n 1fcssm "Ehehe.{w=0.75}{nw}"
                 extend 1fchbg " Yep!"
@@ -11142,7 +11142,7 @@ label talk_daily_jokes_seen_before_loop:
                 n 1cllfl "Yeah.{w=0.75}{nw}"
                 extend 1cllsl " That aged about as well as I expected.{w=1}{nw}"
                 extend 1cslpo " {i}Like trash{/i}."
-            
+
             else:
                 n 1ccssssbl "Heh.{w=0.75}{nw}"
                 extend 1ccstr " I suppose at least {i}some{/i} things don't change.{w=0.75}{nw}"
@@ -11164,7 +11164,7 @@ label talk_daily_jokes_seen_before_loop:
                 extend 1cllflsbl " I gotta admit.{w=0.75}{nw}"
                 extend 1cdwflsbl " I've still got no idea who {i}that{/i} joke is meant to be for."
                 n 1csrbosbl "..."
-            
+
             else:
                 n 1ccsaj "Uh huh.{w=0.75}{nw}"
                 extend 1ccsbg " Yep!"
@@ -11179,7 +11179,7 @@ label talk_daily_jokes_seen_before_loop:
             if dialogue_choice == 1:
                 n 1fcssmeme "Ehehe.{w=0.75}{nw}"
                 extend 1fchbg " There you go,{w=0.2} [player]!"
-            
+
             elif dialogue_choice == 2:
                 n 1fnmbg "...And there you go,{w=0.2} [player]!{w=0.75}{nw}"
                 extend 1fcssmesm " Better appreciate it!"
@@ -11217,14 +11217,14 @@ label talk_daily_jokes_seen_before_loop:
                     n 1fcssm "Ehehe."
                     n 1fcsbg "Fine,{w=0.2} fine.{w=0.75}{nw}"
                     extend 1flrsm " I'll put it away..."
-                    n 1fsqcs "...Now that we've had enough{w=0.5}{nw}" 
+                    n 1fsqcs "...Now that we've had enough{w=0.5}{nw}"
                     extend 1fnmss " {i}pun{/i}{w=0.5}{nw}"
                     extend 1fsqbg " and all."
                     n 1nchgn "Ahaha.{w=0.75}{nw}"
 
                     if Natsuki.isLove(higher=True):
                         extend 1fchbll " Love you too,{w=0.2} [player]~!"
-                    
+
                     else:
                         extend 1fcsbs " No regrets,{w=0.2} [player]!"
 
@@ -11257,7 +11257,7 @@ label talk_daily_jokes_seen_before_loop:
                     if Natsuki.isLove(higher=True):
                         n 1fchgn "Ehehe.{w=0.75}{nw}"
                         extend 1fchblleme " Love you too,{w=0.2} [player]~!"
-                    
+
                     else:
                         n 1fchgnelg "You're welcome,{w=0.2} [player]!"
 
@@ -11280,8 +11280,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_fitting_clothing",
             unlocked=True,
-            prompt="Clothing problems",
-            category=["Fashion"],
+            prompt=__("Clothing problems"),
+            category=[__("Fashion")],
             conditional="persistent.jn_custom_outfits_unlocked",
             affinity_range=(jn_affinity.AFFECTIONATE, None),
             nat_says=True,
@@ -11299,7 +11299,7 @@ label talk_fitting_clothing:
     extend 3clrsl " it always seemed pointless getting all worked up about it.{w=0.75}{nw}"
     extend 3nsrposbr " It's not like I was ever going to be tall {i}eventually{/i}."
     n 4csrca "...Especially not now."
-    n 1ulraj "But...{w=1}{nw}" 
+    n 1ulraj "But...{w=1}{nw}"
     extend 1unmaj " I guess I just came to realize it's like my teeth,{w=0.75}{nw}"
     extend 2nnmbo " or my hair or whatever."
     n 2fcstr "You just gotta make the most of it.{w=1}{nw}"
@@ -11324,13 +11324,13 @@ label talk_fitting_clothing:
     n 1flrfl "Yeah,{w=0.2} sure.{w=0.75}{nw}"
     extend 4flrca " I {i}know{/i} oversize is a thing.{w=1}{nw}"
     extend 2fsrtr " Obviously."
-    n 2flrgs "But come {w=0.3}{nw}" 
+    n 2flrgs "But come {w=0.3}{nw}"
     extend 2fcsgs "{b}on{/b}!"
     n 4ksqfl "Is it {i}really{/i} too much to want sleeves that {i}don't{/i} dangle off my arms too?"
     n 1fllfl "I mean,{w=0.2} half the time I walked over to check out the adult's clothes,{w=0.75}{nw}"
     extend 1fnmem " I'd have to walk right back out again!"
     n 2fsrsl "...And there's only so many times you can try the kids section before people start giving you stupid looks."
-    
+
     n 2fcsemesi "Ugh..."
     n 1cslbo "It's just embarrassing.{w=1}{nw}"
     extend 4fslsl " And usually a {i}complete{/i} waste of time too."
@@ -11346,7 +11346,7 @@ label talk_fitting_clothing:
     n 2ncstr "Well,{w=0.2} whatever.{w=0.75}{nw}"
     extend 1fnmca " Stores might be short of options.{w=0.75}{nw}"
     extend 1fsrca " And {i}courtesy{/i}."
-    n 3fcsaj "But I can assure you:{w=0.5}{nw}" 
+    n 3fcsaj "But I can assure you:{w=0.5}{nw}"
     extend 3fcsbg " my imagination {i}never{/i} comes up short!"
 
     $ pastel_goth_getup = jn_outfits.getOutfit("jn_pastel_goth_getup")
@@ -11419,7 +11419,7 @@ label talk_fitting_clothing:
     n 3fcsbg "There's nothing some good old fashioned know-how,{w=0.2} a needle,{w=0.75}{nw}"
     extend 3fchgn " and a bunch of my patches can't fix!{w=1}{nw}"
     extend 3nchgn " Ahaha."
-    
+
     n 4clrss "Well,{w=0.2} anyway.{w=0.75}{nw}"
     extend 2csrsmsbl " I think I've just about gone on long enough.{w=1}{nw}"
     extend 2fcsajsbl " As good as it was getting all that off my chest."
@@ -11446,8 +11446,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_favorite_subject",
             unlocked=True,
-            prompt="What's your favorite subject?",
-            category=["Education"],
+            prompt=__("What's your favorite subject?"),
+            category=[__("Education")],
             conditional="jn_utils.get_total_gameplay_hours() >= 2",
             player_says=True,
             location="classroom"
@@ -11463,10 +11463,10 @@ label talk_favorite_subject:
             n 2ccsbo "...Wait.{w=0.75}{nw}"
             extend 2tnmpu " Didn't we go through this already,{w=0.2} [player]?{w=1}{nw}"
             extend 2clrbo " Huh."
-            n 1clraj "Well,{w=0.2} whatever.{w=0.75}{nw}" 
+            n 1clraj "Well,{w=0.2} whatever.{w=0.75}{nw}"
             extend 4tllaj " It's not like much has changed.{w=1}{nw}"
             extend 2cslem " I {i}still{/i} can't stick math!"
-        
+
         else:
             n 2cslem "Not {i}math{/i},{w=0.5}{nw}"
             extend 2fsrfl " I'll tell you that much."
@@ -11492,7 +11492,7 @@ label talk_favorite_subject:
         n 4fcsan "And don't even get me {i}started{/i} on calculus...{w=1}{nw}"
         extend 2fslsl " or {i}algebra{/i}."
         n 2fsqem "And I {i}really{/i} hated having to spend my nights cramming the crap out of it before{w=0.25}{nw}"
-        extend 2fcsan " every{w=0.3} single{w=0.3}{nw}" 
+        extend 2fcsan " every{w=0.3} single{w=0.3}{nw}"
         extend 2fsran " exam."
         n 4fcsan "It's..."
         n 1csrsl "..."
@@ -11512,14 +11512,14 @@ label talk_favorite_subject:
             if Natsuki.isEnamored(higher=True):
                 n 1cslcal "E-{w=0.2}even if it's just so I can {i}say{/i} I can do it."
                 n 4cslunl "..."
-            
+
             else:
                 n 1fcstrlsbr "Just like everything else."
                 n 4cllsllsbr "..."
 
             n 2ccsfllsbr "A-{w=0.2}anyway!{w=0.75}{nw}"
             extend 4fcspo " We're getting off track here."
-            n 4tllpu "Favorite subject,{w=0.5}{nw}" 
+            n 4tllpu "Favorite subject,{w=0.5}{nw}"
             extend 3tnmss " huh?"
             n 3csqsm "Ehehe.{w=0.75}{nw}"
             extend 4fsqbg " You really need to ask?{w=0.75}{nw}"
@@ -11538,13 +11538,13 @@ label talk_favorite_subject:
             n 4unmaj "Favorite subject,{w=0.5}{nw}"
             extend 4tnmbo " huh?"
             n 2ccsss "Heh.{w=1}{nw}"
-            
+
             if already_discussed_topic:
                 extend 2fcsbg " You really don't remember,{w=0.2} [player]?"
 
             else:
                 extend 2fcsbg " As if the answer hadn't already practically slapped you in the face."
-        
+
         n 4uchgn "...Literature,{w=0.75}{nw}"
         extend 3fchgn " duh!"
         n 3fsqsm "You didn't seriously think I just pulled my poetry out of thin air or something,{w=0.5}{nw}"
@@ -11609,8 +11609,8 @@ label talk_favorite_subject:
         extend 2fllan " It's ridiculous!"
         n 2fcsan "How is {i}anyone{/i} meant to remember so much random nonsense?{w=0.75}{nw}"
         extend 1flrem " Especially around exams."
-        n 2fupfl "Because nothing makes me {i}love{/i} a subject more than having to no-life it{w=0.5}{nw}" 
-        extend 4fcsan " every{w=0.3} single{w=0.3} time{w=0.3}{nw}" 
+        n 2fupfl "Because nothing makes me {i}love{/i} a subject more than having to no-life it{w=0.5}{nw}"
+        extend 4fcsan " every{w=0.3} single{w=0.3} time{w=0.3}{nw}"
         extend 4fslan " an exam shows up."
         n 1fcssl "..."
         n 4fcsfl "I...{w=0.75}{nw}"
@@ -11624,7 +11624,7 @@ label talk_favorite_subject:
         n 1fllfl "Why not?{w=0.75}{nw}"
         extend 1fslan " Besides..."
         n 4fslem "Not like there's always gonna be {i}someone{/i} you can rely on."
-        n 2fllem "...Right,{w=0.75}{nw}" 
+        n 2fllem "...Right,{w=0.75}{nw}"
         extend 2fsqem " {i}[player]{/i}?"
 
     else:
@@ -11644,7 +11644,7 @@ label talk_favorite_subject:
         extend 2fcsemtsa " Yeah.{w=1}{nw}"
         extend 2fsqantsb " {i}No thanks{/i}."
         n 4fsqupltsb "Now {i}get out of my face{/i}."
-    
+
     return
 
 # Natsuki talks about her drawing skills and art classes.
@@ -11654,8 +11654,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_can_you_draw",
             unlocked=True,
-            prompt="Can you draw?",
-            category=["Art"],
+            prompt=__("Can you draw?"),
+            category=[__("Art")],
             conditional="jn_utils.get_total_gameplay_hours() >= 6",
             player_says=True,
             location="classroom"
@@ -11680,7 +11680,7 @@ label talk_can_you_draw:
         else:
             n 4tnmaj "Huh?{w=0.75}{nw}"
             extend 4cllbo " Can I draw?{w=0.75}{nw}"
-            extend 1tslpu " Like...{w=0.3} portraits,{w=0.2} landscapes,{w=0.5}{nw}" 
+            extend 1tslpu " Like...{w=0.3} portraits,{w=0.2} landscapes,{w=0.5}{nw}"
             extend 2tnmaj " that kind of thing?"
             n 2ccsss "Heh.{w=0.75}{nw}"
             extend 2cslaj " I wish!{w=0.75}{nw}"
@@ -11704,7 +11704,7 @@ label talk_can_you_draw:
         n 4ctrpu "I get that art has a lot of history behind it.{w=0.75}{nw}"
         extend 4csrfl " And of course there's tons of styles out there to learn.{w=0.75}{nw}"
         extend 4fcssl " I get it."
-        n 1flrgs "But come{w=0.5}{nw}" 
+        n 1flrgs "But come{w=0.5}{nw}"
         extend 2fcsgs " {b}on{/b}!{w=1}{nw}"
         extend 2fslup " What's even the point in studying so much about all these different artists and styles..."
         n 4fsqem "...If we barely even had the time to cover any of the basics?{w=0.75}{nw}"
@@ -11729,7 +11729,7 @@ label talk_can_you_draw:
         if Natsuki.isAffectionate(higher=True):
             n 2csrpusbl "It's just that..."
             n 2ksrbol "..."
-            n 2fcspul "It's...{w=1}{nw}" 
+            n 2fcspul "It's...{w=1}{nw}"
             extend 1cslpu " intimidating.{w=1}{nw}"
             extend 2ksqsl " Trying to teach yourself something like that."
             n 2cllaj "It's fine if you've always been drawing,{w=0.2} or you have some kind of teacher."
@@ -11746,7 +11746,7 @@ label talk_can_you_draw:
                 extend 4ccsssl " Not {i}yet{/i},{w=0.2} anyway."
                 n 2ulrpu "Though...{w=1}{nw}"
                 extend 4unmbo " what about you,{w=0.2} [player]?"
-            
+
             else:
                 n 2ncspuesi "..."
                 n 2csrbo "I don't know."
@@ -11755,7 +11755,7 @@ label talk_can_you_draw:
                 extend 2ccsca " I'm kinda bored of listening to myself now.{w=0.75}{nw}"
                 extend 2tnmbo " So what about you,{w=0.2} [player]?"
 
-        else: 
+        else:
             n 2clrca "But...{w=1}{nw}"
             extend 2ksrpu " that's..."
             n 1fcsbo "..."
@@ -11773,7 +11773,7 @@ label talk_can_you_draw:
             n 3fcssm "Ehehe."
             n 4fcsbg "Yep!"
             n 4fsqsmeme "You've got 'artist' written all over you."
-            n 3fsqsssbr "All the more reason to be grateful you've always got {i}such{/i} a great subject on hand,{w=0.5}{nw}" 
+            n 3fsqsssbr "All the more reason to be grateful you've always got {i}such{/i} a great subject on hand,{w=0.5}{nw}"
             extend 3fcsbgsbr " am I right?"
 
         else:
@@ -11887,8 +11887,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_enable_no_topics_reminder",
             unlocked=True,
-            prompt="Can you remind me next time you run out of topics?",
-            category=["Natsuki", "Reminders"],
+            prompt=__("Can you remind me next time you run out of topics?"),
+            category=[__("Natsuki"), __("Reminders")],
             conditional="not persistent._jn_natsuki_out_of_topics_remind",
             player_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
@@ -11910,10 +11910,10 @@ label talk_enable_no_topics_reminder:
         extend 4fsqwrl " Now hold on just a second here,{w=0.2} [player]!{w=0.75}{nw}"
         extend 4fcsgs " I know {i}exactly{/i} what this is all about!"
         n 2fllfl "You even said before that you wanted me to {i}stop{/i} reminding you..."
-        n 2fnmgs "And now you're getting on my case about reminding you{w=0.3}{nw}" 
+        n 2fnmgs "And now you're getting on my case about reminding you{w=0.3}{nw}"
         extend 4fcsgs " {i}again{/i}!{w=1}{nw}"
         extend 2fsrfl " Jeez..."
-        n 2cslpu "Do I really have to remind you how to make a {i}decision{/i} too now [player],{w=0.5}{nw}" 
+        n 2cslpu "Do I really have to remind you how to make a {i}decision{/i} too now [player],{w=0.5}{nw}"
         extend 2csqpu " or what?"
         n 2fsqpo "..."
         n 2fsqcs "..."
@@ -11924,7 +11924,7 @@ label talk_enable_no_topics_reminder:
         n 4ccsaj "Just...{w=1}{nw}"
         extend 2csqca " don't make some kind of habit out of it.{w=0.75}{nw}"
         extend 2cslcasbr " I hate sounding like a broken record."
-        
+
         if Natsuki.isEnamored(higher=True):
             n 2fcsbglsbr "E-{w=0.2}even if you do enjoy listening to me go on about it {i}that{/i} much.{w=0.75}{nw}"
             extend 2fsqsmlsbr " Ehehe."
@@ -11977,8 +11977,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_windup_playing_things_out_loud",
             unlocked=True,
-            prompt="Playing things out loud",
-            category=["Wind-ups"],
+            prompt=__("Playing things out loud"),
+            category=[__("Wind-ups")],
             conditional="jn_utils.get_total_gameplay_hours() >= 4",
             nat_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
@@ -12023,7 +12023,7 @@ label talk_windup_playing_things_out_loud:
     n 3flrem "I mean,{w=0.2} come on.{w=0.75}{nw}"
     extend 3fupwr " Where do I even {i}start{/i}?"
     n 6fcsgs "First off,{w=0.5}{nw}"
-    extend 3fllan " you can basically guarantee that whatever it is,{w=0.75}{nw}" 
+    extend 3fllan " you can basically guarantee that whatever it is,{w=0.75}{nw}"
     extend 3fslan " it's {i}never{/i} gonna sound good."
     n 4fbkwr "Nothing ever {i}does{/i} when you're blasting it out of crappy phone speakers or busted-up headphones!"
     n 4fcsan "Bonus points too if it's some kid playing on something their parents gave them just to shut them up."
@@ -12032,7 +12032,7 @@ label talk_windup_playing_things_out_loud:
     extend 2fsqem " God,{w=0.5}{nw}"
     extend 4fsrfu " [player]."
     n 4fcsup "{i}The echoing{/i}."
-    n 3fsqgs "Do you even know how much worse it gets when you're stuck inside the train,{w=0.5}{nw}" 
+    n 3fsqgs "Do you even know how much worse it gets when you're stuck inside the train,{w=0.5}{nw}"
     extend 3fcsgs " or literally anything else?"
     n 3fcsan "Talk about an earache.{w=0.75}{nw}"
     extend 7fllem " Especially if you just wanted to relax before the day starts!"
@@ -12040,11 +12040,11 @@ label talk_windup_playing_things_out_loud:
     n 2fcssl "Heh.{w=0.75}{nw}"
     extend 2fsqfr " Then you know what the worst part is,{w=0.2} [player]?"
     n 4fllem "If you even try to call them out,{w=0.5}{nw}"
-    extend 4csqem " you just know they'll make a massive scene over it too,{w=0.5}{nw}" 
+    extend 4csqem " you just know they'll make a massive scene over it too,{w=0.5}{nw}"
     extend 4fslfu " or make it sound like you're just freaking out!"
     n 6ftlgs "'But you don't {i}have{/i} to listen to it!'{w=0.5}{nw}"
     extend 3ftrwr " 'You can play what you want too!'\n{w=0.75}{nw}"
-    extend 3fsran "As if that makes everything just a-okay,{w=0.5}{nw}" 
+    extend 3fsran "As if that makes everything just a-okay,{w=0.5}{nw}"
     extend 3fsqan " right?"
     n 1fcsem "Cut me a break."
     n 2flran "Like just how inconsiderate can you get?{w=0.75}{nw}"
@@ -12106,7 +12106,7 @@ label talk_windup_playing_things_out_loud:
         n 2tlraj "And I kinda doubt you're {i}that{/i} much of a jerk anyway."
 
     n 2clrfl "But...{w=1}{nw}"
-    extend 2csgfl " if I hear about you blasting some kind of [player] broadcast out there in front of everyone when {w=0.3}{i}literally{/i}{w=0.5}{nw}" 
+    extend 2csgfl " if I hear about you blasting some kind of [player] broadcast out there in front of everyone when {w=0.3}{i}literally{/i}{w=0.5}{nw}"
     extend 2csqfl " no-one asked?"
     n 4fcsbs "...Then you can bet your butt I'm going to give {i}your{/i} ears something extra-special to listen to!{w=0.75}{nw}"
     extend 4fsqsmeme " Ehehe."
@@ -12129,8 +12129,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_work_experience",
             unlocked=True,
-            prompt="Did you ever have any work experience?",
-            category=["Society"],
+            prompt=__("Did you ever have any work experience?"),
+            category=[__("Society")],
             conditional="jn_utils.get_total_gameplay_days() >= 2",
             player_says=True,
             location="classroom"
@@ -12172,7 +12172,7 @@ label talk_work_experience:
             extend 3tnmsl " But at my school at least?{w=0.75}{nw}"
             extend 3clrem " We didn't even get to properly {i}choose{/i} our placements."
 
-        n 1fnmem "Seriously -{w=0.5}{nw}" 
+        n 1fnmem "Seriously -{w=0.5}{nw}"
         extend 4fllgs " it was a total crapshoot!{w=0.75}{nw}"
         extend 2fslan " Nothing but dumb luck!"
 
@@ -12193,7 +12193,7 @@ label talk_work_experience:
         n 2fnman "But most of them were just working in some random store!{w=0.75}{nw}"
         extend 4fcswr " The whole point of those is that you don't even {i}need{/i} experience to do them!"
         n 2fsrem "...And we had to pick {i}three{/i} of them too.{w=0.5} {i}In order of preference{/i}."
-        n 1fcssl "Heh.{w=0.75}{nw}" 
+        n 1fcssl "Heh.{w=0.75}{nw}"
         extend 4fsqfl " The worst part,{w=0.2} [player]?{w=0.75}{nw}"
 
         if already_discussed_work_experience:
@@ -12216,7 +12216,7 @@ label talk_work_experience:
         extend 3fnmem " what they even did,{w=0.5}{nw}"
         extend 4flran " how to actually {i}get{/i} there..."
         n 1fsqan "...While trying to play up how {i}amazing{/i} for the job we were and beat everyone else in submitting it!"
-        n 2fslsl "Then with everyone applying for all the good ones,{w=0.5}{nw}" 
+        n 2fslsl "Then with everyone applying for all the good ones,{w=0.5}{nw}"
         extend 2fslem " the teachers would just send off your last choice instead.{w=0.75}{nw}"
         extend 4fnmbo " Or dump you with some place nobody wanted at all."
 
@@ -12269,7 +12269,7 @@ label talk_work_experience:
             extend 2fcsgssbr " O-{w=0.2}of course I did!{w=0.75}{nw}"
             extend 2fllslsbr " Just my luck that everyone felt like picking the only places {i}I{/i} could stomach."
             n 5flrflsbr "And it wasn't like I could even get to many other places either."
-            n 5clrslsbr "Not with my...{w=1}{nw}" 
+            n 5clrslsbr "Not with my...{w=1}{nw}"
             extend 1ksrslsbr " situation."
             n 1nlraj "So..."
             n 2nslbo "They agreed to let me pull some time in the school library instead.\n{w=0.75}{nw}"
@@ -12289,7 +12289,7 @@ label talk_work_experience:
                 extend 7cnmss " You know what?{w=0.75}{nw}"
                 extend 6ccsss " Just give me a minute here."
                 n 3fcsbslsbl "Someone's gotta show you what a {i}real{/i} professional looks like,{w=0.2} a-{w=0.2}after all!"
-                
+
                 show natsuki 4fcssmlsbl
                 show black zorder JN_BLACK_ZORDER with Dissolve(0.5)
                 $ jnPause(1)
@@ -12424,14 +12424,14 @@ label talk_work_experience:
     elif Natsuki.isDistressed(higher=True):
         if already_discussed_work_experience:
             n 1ccsemesi "..."
-            n 2cslem "Seriously,{w=0.75}{nw}" 
+            n 2cslem "Seriously,{w=0.75}{nw}"
             extend 2csqem " [player]?{w=0.75}{nw}"
             extend 4fsqfl " This {i}again{/i}?{w=0.75}{nw}"
             extend 4fnmfl " Were you even {i}listening{/i} the first time or what?"
             n 1fcsfr "..."
             n 1flrfl "...Fine.{w=0.75}{nw}"
             extend 2fcsfl " Besides."
-            n 4fllsl "I'm not gonna discriminate against the{w=0.5}{nw}" 
+            n 4fllsl "I'm not gonna discriminate against the{w=0.5}{nw}"
             extend 4fsqsl " {i}hard of hearing{/i}."
             n 1fcsfl "So.{w=0.75}{nw}"
             extend 1flrbo " Like I was saying before..."
@@ -12445,7 +12445,7 @@ label talk_work_experience:
             extend 2fsrpu " I had an {i}experience{/i} alright.{w=0.75}{nw}"
             extend 4csqsl " If that actually matters."
 
-        n 1nllaj "My school did placements,{w=0.75}{nw}" 
+        n 1nllaj "My school did placements,{w=0.75}{nw}"
         extend 1nllsl " but it wasn't some kind of big event if that's what you were thinking."
         n 2fslfr "Though some actual {i}notice{/i} would have been nice."
         n 2fcsaj "Nope -{w=0.5}{nw}"
@@ -12471,8 +12471,8 @@ label talk_work_experience:
         extend 2ccsem " {i}Obviously{/i} life skills and connections matter."
         n 4fcsfl "But come{w=0.5}{nw}"
         extend 4fcsgs " {b}on{/b}!{w=0.75}{nw}"
-        extend 3flrsl " As if I'm missing out on {i}super important{/i} life experience stacking{w=0.5}{nw}" 
-        extend 3fsran " shelves,{w=0.5}{nw}" 
+        extend 3flrsl " As if I'm missing out on {i}super important{/i} life experience stacking{w=0.5}{nw}"
+        extend 3fsran " shelves,{w=0.5}{nw}"
         extend 3fllem " or playing cashier for two weeks."
         n 1fcsem "Ugh..."
         n 2flrsl "I wouldn't have cared so much if I didn't have everything else to keep on top of.{w=0.75}{nw}"
@@ -12484,7 +12484,7 @@ label talk_work_experience:
         if Natsuki.isUpset(higher=True):
             n 4fslsl "Being here right now already feels like a job enough to me,{w=0.5}{nw}"
             extend 4fsqfr " {i}[player]{/i}."
-            
+
         else:
             n 4fcsan "Dealing with {i}you{/i} right now feels like a job enough to me,{w=0.5}{nw}"
             extend 4fsqan " {i}[player]{/i}."
@@ -12503,12 +12503,12 @@ label talk_work_experience:
 
         else:
             n 1fsqfltsb "...Really?{w=1}{nw}"
-            extend 4fnmantsc " And since when did you care about any of my experiences,{w=0.75}{nw}" 
+            extend 4fnmantsc " And since when did you care about any of my experiences,{w=0.75}{nw}"
             extend 4fsqantsc " {i}[player]{/i}?"
             n 4fcsuntsa "..."
             n 2fcsemtsa "You know what?{w=1}{nw}"
             extend 2fcsantsa " I don't care.{w=1}{nw}"
-            extend 1fnmantsc " You want an answer so bad?{w=1.25}" 
+            extend 1fnmantsc " You want an answer so bad?{w=1.25}"
             extend 2fsquptsb " {b}Fine{/b}."
             n 2flrantsc "It was crap.{w=1}{nw}"
             extend 4fnmfutsc " Okay?!{w=1.25}{nw}"
@@ -12534,9 +12534,9 @@ init 5 python:
             persistent._topic_database,
             label="talk_play_blackjack",
             unlocked=True,
-            prompt="Do you want to play Blackjack?",
+            prompt=__("Do you want to play Blackjack?"),
             conditional="persistent._jn_blackjack_unlocked",
-            category=["Games"],
+            category=[__("Games")],
             player_says=True,
             affinity_range=(jn_affinity.AFFECTIONATE, None),
             location="classroom"
@@ -12599,9 +12599,9 @@ init 5 python:
             persistent._topic_database,
             label="talk_remind_blackjack_rules",
             unlocked=True,
-            prompt="Can you go over the rules of Blackjack again?",
+            prompt=__("Can you go over the rules of Blackjack again?"),
             conditional="persistent._jn_blackjack_unlocked and persistent._jn_blackjack_explanation_given",
-            category=["Games"],
+            category=[__("Games")],
             player_says=True,
             affinity_range=(jn_affinity.AFFECTIONATE, None),
             location="classroom"
@@ -12615,7 +12615,7 @@ label talk_remind_blackjack_rules:
         extend 2tnmbo " huh [player]?"
         n 7tlrsl "..."
         n 7tlraj "Well...{w=1}{nw}"
-        extend 7tlrss " I guess I can't be too surprised,{w=0.75}{nw}" 
+        extend 7tlrss " I guess I can't be too surprised,{w=0.75}{nw}"
         extend 7tsqss " knowing you."
         n 6ccssslsbr "A-{w=0.2}all too hard to pay attention with such a pretty face,{w=0.2} right?{w=0.75}{nw}"
         extend 3csldvlsbr " Ehehe."
@@ -12623,7 +12623,7 @@ label talk_remind_blackjack_rules:
 
     elif Natsuki.isEnamored(higher=True):
         n 1ccsbg "Oh?"
-        n 1flrbg "Someone needs a reminder already,{w=0.5}{nw}" 
+        n 1flrbg "Someone needs a reminder already,{w=0.5}{nw}"
         extend 1fsqss " huh?"
         n 1fsqsm "..."
         n 1fchsm "Ahaha.{w=0.75}{nw}"
@@ -12641,7 +12641,7 @@ label talk_remind_blackjack_rules:
         n 2fcssm "Ehehe."
         n 1tlrss "Nah,{w=0.5}{nw}"
         extend 3clrss " It's fine."
-        n 7ccsbg "I can't expect {i}everyone{/i} to have memory as good as mine,{w=0.5}{nw}" 
+        n 7ccsbg "I can't expect {i}everyone{/i} to have memory as good as mine,{w=0.5}{nw}"
         extend 7fcssmesm " after all."
 
     $ get_topic("talk_remind_blackjack_rules").shown_count += 1 # Have to increment manually here thanks to jump
@@ -12654,8 +12654,8 @@ init 5 python:
             persistent._topic_database,
             label="talk_windup_shaving",
             unlocked=True,
-            prompt="Shaving",
-            category=["Wind-ups", "Fashion"],
+            prompt=__("Shaving"),
+            category=[__("Wind-ups"), __("Fashion")],
             nat_says=True,
             affinity_range=(jn_affinity.NORMAL, None),
             location="classroom"
@@ -12683,7 +12683,7 @@ label talk_windup_shaving:
         n 7fcsan "Tch!"
         n 3fsrsl "..."
         n 3fcsem "...Ugh."
-        n 4fsrfl "Man.{w=0.75}{nw}" 
+        n 4fsrfl "Man.{w=0.75}{nw}"
         extend 4flrfl " I totally forgot about how much that got on my nerves."
         n 2csqem "...You know what I {i}always{/i} hated,{w=0.2} [player]?{w=0.75}{nw}"
         extend 4fslan " Something that {i}never{/i} failed to get on my nerves?"
@@ -12704,11 +12704,11 @@ label talk_windup_shaving:
 
     extend 3fupwr " let's give a {i}huge{/i} round of applause to everybody's favorite pain in the backside:{w=0.75}{nw}"
     extend 3fsran " the human body!"
-    n 1fcsgs "I don't know about you,{w=0.2} [player].{w=0.75}{nw}" 
+    n 1fcsgs "I don't know about you,{w=0.2} [player].{w=0.75}{nw}"
     extend 2tnmem " But depending on how fast your hair grows?{w=0.75}{nw}"
     extend 2csqem " You're gonna be looking at anywhere from days to hours between shaves."
     n 2fupgs "Of course!"
-    n 2fcsgs "Because nobody{w=0.5}{nw}" 
+    n 2fcsgs "Because nobody{w=0.5}{nw}"
     extend 2fsqem " {i}ever{/i}{w=0.5}{nw}"
     extend 2fllem " had anything better to do in the morning than blow a bunch of time obsessing over how {i}silky smooth{/i} their features are."
     n 4fsqfl "Right?"
@@ -12724,13 +12724,13 @@ label talk_windup_shaving:
     n 4flran "Why does it {i}have{/i} to be so different for hair anywhere else?"
     n 4fcsan "Cut me a break."
 
-    n 1fnmfl "Oh -{w=0.5}{nw}" 
+    n 1fnmfl "Oh -{w=0.5}{nw}"
     extend 3fsqwr " and did I mention just how much you have to pay for the privilege?"
     n 3fbkwr "It doesn't even matter what you use!"
     n 7fllem "Those razors with the replaceable bits on the end?{w=0.75}{nw}"
     extend 3fcswr " Hope you enjoy squeezing as much out of each one as you can to save on the refills!"
     n 6csqem "Going disposable?{w=0.75}{nw}"
-    extend 3flrem " Yeah,{w=0.2} because I{w=0.2}{nw}" 
+    extend 3flrem " Yeah,{w=0.2} because I{w=0.2}{nw}"
     extend 4fsrem " {i}totally{/i}{w=0.2}{nw}"
     extend 4fsqan " enjoy emptying the trash just like how they're emptying my bank account."
     n 2fslem "...Not."
@@ -12743,7 +12743,7 @@ label talk_windup_shaving:
     n 3fcsemesi "..."
 
     n 3fcssl "Heh.{w=0.75}{nw}"
-    extend 7fsqfl " And whatever you do?{w=0.75}{nw}" 
+    extend 7fsqfl " And whatever you do?{w=0.75}{nw}"
     extend 7fslun " It {i}never{/i} feels like you'll even get the kind of shave you wanted in the first place."
     n 1fcsfl "Yeah,{w=0.2} yeah.{w=0.75}{nw}"
     extend 4fcsgs " Say whatever you want,{w=0.2} [player].{w=0.75}{nw}"
@@ -12754,7 +12754,7 @@ label talk_windup_shaving:
     extend 4fcsan " As if they think I haven't {i}tried{/i} that already!"
     n 2fllem "Like...{w=1}{nw}"
     extend 2fslan " Come {w=0.5}{nw}{i}on{/i}!{w=0.75}{nw}"
-    extend 2fsqwr " Is this meant to be a morning routine?{w=1}{nw}" 
+    extend 2fsqwr " Is this meant to be a morning routine?{w=1}{nw}"
     extend 1fbkwrean " Or some kind of cult ritual?"
     n 1fslsl "At least a ritual doesn't leave your legs looking like a war zone either."
     n 2fcsem "Ugh..."
@@ -12770,7 +12770,7 @@ label talk_windup_shaving:
 
         else:
             n 3ccsca "Not like just complaining about something ever achieved anything anyway."
-        
+
     else:
         n 2csrpu "You'd think something practically everybody's had to deal with for so long would actually be {i}solved{/i} by now,{w=0.5}{nw}"
         extend 2csqsl " right?"
@@ -12780,7 +12780,7 @@ label talk_windup_shaving:
         extend 3cllfl " I've already gone on about this long enough.{w=0.75}{nw}"
         extend 7cslfl " And I really don't want {i}shaving{/i} of all things living rent-free in my head again."
 
-    n 3clraj "So...{w=1}{nw}" 
+    n 3clraj "So...{w=1}{nw}"
     extend 3ccsaj " I'm just gonna say this."
 
     $ chosen_descriptor = "babe" if Natsuki.isLove(higher=True) else player

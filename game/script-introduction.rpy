@@ -212,7 +212,7 @@ label introduction_first_meeting:
     n 4kplsf "It's all...{w=0.3} so foggy...{w=1}{nw}"
     extend 4kcsun " I just...{w=0.3} can't...{w=0.3} remember..."
     show natsuki 4kcsem
-    
+
     menu:
         "I'm...":
             pass
@@ -221,7 +221,7 @@ label introduction_first_meeting:
     $ name_given = False
     while not name_given:
         $ player_name = renpy.input(
-            "What is your name?",
+            __("What is your name?"),
             allow=(jn_globals.DEFAULT_ALPHABETICAL_ALLOW_VALUES+jn_globals.DEFAULT_NUMERICAL_ALLOW_VALUES),
             length=15
         ).strip()

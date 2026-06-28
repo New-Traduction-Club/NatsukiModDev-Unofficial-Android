@@ -35,7 +35,7 @@ label ch30_visual_setup:
 label ch30_init:
     python:
         import codecs
-        import random  
+        import random
 
         # MIGRATIONS
 
@@ -50,7 +50,7 @@ label ch30_init:
             renpy.jump("greeting_pic")
 
         if (
-            jn_utils.getAllDirectoryFiles(path=renpy.config.gamedir, extension_list=["rpy"]) 
+            jn_utils.getAllDirectoryFiles(path=renpy.config.gamedir, extension_list=["rpy"])
             and persistent._jn_scw
         ):
             renpy.show_screen("warn", "596f75206172652072756e6e696e6720736f7572636520282e727079292066696c65732120556e6c65737320796f75206b6e6f77207768617420796f752061726520646f696e672c20706c656173652073776974636820746f2072656c656173652066696c65732e".decode("hex"))
@@ -98,7 +98,7 @@ label ch30_init:
 
         # If we have decorations from the last holiday, and the day hasn't changed, then we should put them back up
         if (
-            len(persistent._jn_holiday_deco_list_on_quit) > 0 
+            len(persistent._jn_holiday_deco_list_on_quit) > 0
             and datetime.date.today().day == persistent.jn_last_visited_date.day
             and not tt_in_session
         ):
@@ -266,7 +266,7 @@ label ch30_init:
 #The main loop
 label ch30_loop:
     $ jn_activity.ACTIVITY_MANAGER.setIsEnabled(True)
-    $ jnShowNatsukiIdle(jn_center)  
+    $ jnShowNatsukiIdle(jn_center)
 
     #Run our checks
     python:
@@ -308,7 +308,7 @@ label ch30_wait:
         if not jn_topic_in_event_list("weather_change") and jn_locations.checkUpdateLocationSunriseSunset(main_background):
             queue("weather_change")
 
-        jnShowNatsukiIdle(jn_center)  
+        jnShowNatsukiIdle(jn_center)
         jnPause(delay=5.0, hard=True)
 
     jump ch30_loop
@@ -318,7 +318,7 @@ label call_next_topic(show_natsuki=True):
     $ _topic = None
 
     if show_natsuki:
-        $ jnShowNatsukiIdle(jn_center)  
+        $ jnShowNatsukiIdle(jn_center)
 
     if persistent._event_list:
         $ _topic = persistent._event_list.pop(0)
@@ -341,38 +341,38 @@ label call_next_topic(show_natsuki=True):
                         store.confused_emote = jn_utils.getRandomConfusedEmoticon()
 
                         ENAMORED_NOTIFY_MESSAGES = [
-                            "[player]! [player]! Wanna talk? [happy_emote]",
-                            "Hey! You got a sec? [happy_emote]",
-                            "Wanna talk? [happy_emote]",
-                            "[player]! I got something! [happy_emote]",
-                            "Heeey! Wanna talk?",
-                            "Talk to meeee! [angry_emote]",
-                            "I'm talking to you, dummy! [tease_emote]"
+                            __("[player]! [player]! Wanna talk? [happy_emote]"),
+                            __("Hey! You got a sec? [happy_emote]"),
+                            __("Wanna talk? [happy_emote]"),
+                            __("[player]! I got something! [happy_emote]"),
+                            __("Heeey! Wanna talk?"),
+                            __("Talk to meeee! [angry_emote]"),
+                            __("I'm talking to you, dummy! [tease_emote]")
                         ]
                         AFFECTIONATE_NOTIFY_MESSAGES = [
-                            "Wanna talk?",
-                            "[player]! You wanna talk?",
-                            "Hey! Hey! Talk to me! [angry_emote]",
-                            "Hey dummy! I'm talking to you!",
-                            "[player]! I just thought of something! [confused_emote]",
-                            "[player]! I wanna talk to you!",
-                            "I just thought of something, [player]!"
+                            __("Wanna talk?"),
+                            __("[player]! You wanna talk?"),
+                            __("Hey! Hey! Talk to me! [angry_emote]"),
+                            __("Hey dummy! I'm talking to you!"),
+                            __("[player]! I just thought of something! [confused_emote]"),
+                            __("[player]! I wanna talk to you!"),
+                            __("I just thought of something, [player]!")
                         ]
                         HAPPY_NOTIFY_MESSAGES = [
-                            "[player]! Did you have a sec?",
-                            "[player]? Can I borrow you?",
-                            "Hey! Come here a sec?",
-                            "Hey! I wanna talk!",
-                            "You there, [player]?"
+                            __("[player]! Did you have a sec?"),
+                            __("[player]? Can I borrow you?"),
+                            __("Hey! Come here a sec?"),
+                            __("Hey! I wanna talk!"),
+                            __("You there, [player]?")
                         ]
                         NORMAL_NOTIFY_MESSAGES = [
-                            "You wanna talk?",
-                            "Hey... are you busy?",
-                            "[player]? Did you have a sec?",
-                            "Can I borrow you for a sec?",
-                            "You there, [player]?",
-                            "Hey... you still there?",
-                            "[player]? Are you there?"
+                            __("You wanna talk?"),
+                            __("Hey... are you busy?"),
+                            __("[player]? Did you have a sec?"),
+                            __("Can I borrow you for a sec?"),
+                            __("You there, [player]?"),
+                            __("Hey... you still there?"),
+                            __("[player]? Are you there?")
                         ]
 
                         if Natsuki.isNormal(higher=True):
@@ -421,8 +421,8 @@ label call_next_topic(show_natsuki=True):
     # Reenable the UI and hop back to the loop
     python:
         import re
-        
-        if isinstance(_topic, basestring): 
+
+        if isinstance(_topic, basestring):
             # Prevent pushed mechanic topics such as weather changes from resetting topic wait timer
             if re.search("(^talk_)", _topic) or not re.search("(_change$)|(^idle_)", _topic):
                 Natsuki.resetLastTopicCall()
@@ -498,7 +498,7 @@ init python:
                 queue(random.choice(topic_pool).label)
 
             elif (
-                not store.persistent.jn_natsuki_repeat_topics 
+                not store.persistent.jn_natsuki_repeat_topics
                 and not store.persistent._jn_out_of_topics_warning_given
                 and persistent._jn_natsuki_out_of_topics_remind
             ):
@@ -620,67 +620,67 @@ label talk_menu:
         # Get the flavor text for the talk menu, based on affinity state
         if Natsuki.isEnamored(higher=True):
             _talk_flavor_text = renpy.substitute(random.choice([
-                "What's up,{w=0.1} [player]?",
-                "What's on your mind,{w=0.1} [player]?",
-                "Something up,{w=0.1} [player]?",
-                "You wanna talk?{w=0.2} Ehehe.",
-                "I'd love to talk!",
-                "I always love talking to you,{w=0.1} [player]!",
-                "[player]!{w=0.2} What's up?",
-                "[player]!{w=0.2} What's on your mind?",
-                "Ooh!{w=0.2} What did you wanna talk about?",
-                "I'm all ears,{w=0.1} [player]!",
-                "I've always got time for you,{w=0.1} [player]!",
-                "Hey!{w=0.2} What's up,{w=0.2} [player]?",
-                "What have you got for me?{w=0.2} Ehehe.",
-                "[player]!{w=0.2} What's new?",
-                "[player]!{w=0.2} You wanna talk?",
-                "Shoot,{w=0.2} [player]!{w=0.3} Ehehe.",
-                "Shoot,{w=0.2} [player]!",
-                "Oh!{w=0.2} Oh!{w=0.2} You got something for me?",
-                "Talk to me,{w=0.2} [player]!{w=0.3} Ehehe."
+                __("What's up,{w=0.1} [player]?"),
+                __("What's on your mind,{w=0.1} [player]?"),
+                __("Something up,{w=0.1} [player]?"),
+                __("You wanna talk?{w=0.2} Ehehe."),
+                __("I'd love to talk!"),
+                __("I always love talking to you,{w=0.1} [player]!"),
+                __("[player]!{w=0.2} What's up?"),
+                __("[player]!{w=0.2} What's on your mind?"),
+                __("Ooh!{w=0.2} What did you wanna talk about?"),
+                __("I'm all ears,{w=0.1} [player]!"),
+                __("I've always got time for you,{w=0.1} [player]!"),
+                __("Hey!{w=0.2} What's up,{w=0.2} [player]?"),
+                __("What have you got for me?{w=0.2} Ehehe."),
+                __("[player]!{w=0.2} What's new?"),
+                __("[player]!{w=0.2} You wanna talk?"),
+                __("Shoot,{w=0.2} [player]!{w=0.3} Ehehe."),
+                __("Shoot,{w=0.2} [player]!"),
+                __("Oh!{w=0.2} Oh!{w=0.2} You got something for me?"),
+                __("Talk to me,{w=0.2} [player]!{w=0.3} Ehehe.")
             ]))
 
         elif Natsuki.isNormal(higher=True):
             _talk_flavor_text = renpy.substitute(random.choice([
-                "What's up?",
-                "What's on your mind?",
-                "What's happening?",
-                "Something on your mind?",
-                "Oh?{w=0.2} You wanna talk?",
-                "Huh?{w=0.2} What's up?",
-                "You wanna share something?",
-                "What's new,{w=0.1} [player]?",
-                "'Sup,{w=0.1} [player]?",
-                "You wanna talk?",
-                "Hey,{w=0.2} [player]!"
+                __("What's up?"),
+                __("What's on your mind?"),
+                __("What's happening?"),
+                __("Something on your mind?"),
+                __("Oh?{w=0.2} You wanna talk?"),
+                __("Huh?{w=0.2} What's up?"),
+                __("You wanna share something?"),
+                __("What's new,{w=0.1} [player]?"),
+                __("'Sup,{w=0.1} [player]?"),
+                __("You wanna talk?"),
+                __("Hey,{w=0.2} [player]!")
             ]))
 
         elif Natsuki.isDistressed(higher=True):
             _talk_flavor_text = renpy.substitute(random.choice([
-                "What do you want?",
-                "What is it?",
-                "Make it quick.",
-                "What now?",
-                "What do you want now?",
-                "What is it this time?",
-                "Yeah?{w=0.2} What?",
-                "What now?",
-                "This better be good."
+                __("What do you want?"),
+                __("What is it?"),
+                __("Make it quick."),
+                __("What now?"),
+                __("What do you want now?"),
+                __("What is it this time?"),
+                __("Yeah?{w=0.2} What?"),
+                __("What now?"),
+                __("This better be good.")
             ]))
 
         else:
             _talk_flavor_text = renpy.substitute(random.choice([
-                "...",
-                "...?",
-                "What?",
-                "Just talk already.",
-                "Spit it out.",
-                "Start talking.",
-                "Get it over with.",
-                "What do {i}you{/i} want?",
-                "Get on with it.",
-                "Talk."
+                __("..."),
+                __("...?"),
+                __("What?"),
+                __("Just talk already."),
+                __("Spit it out."),
+                __("Start talking."),
+                __("Get it over with."),
+                __("What do {i}you{/i} want?"),
+                __("Get on with it."),
+                __("Talk.")
             ]))
 
         jnShowNatsukiTalkMenu()
@@ -788,7 +788,7 @@ label farewell_menu:
     $ Natsuki.setForceQuitAttempt(False)
 
     if isinstance(_return, basestring):
-        $ jnShowNatsukiIdle(jn_center)  
+        $ jnShowNatsukiIdle(jn_center)
         $ push(_return)
         jump call_next_topic
 
@@ -796,16 +796,16 @@ label farewell_menu:
 
 label outfits_menu:
     call screen scrollable_choice_menu([
-        ("Can you wear an outfit for me?", "outfits_wear_outfit"),
-        ("Can I suggest a new outfit?", "outfits_suggest_outfit"),
-        ("Can you forget about an outfit I suggested?", "outfits_remove_outfit"),
-        ("Can you search again for new items?", "outfits_reload")],
-        ("Go back", None),
+        (__("Can you wear an outfit for me?"), "outfits_wear_outfit"),
+        (__("Can I suggest a new outfit?"), "outfits_suggest_outfit"),
+        (__("Can you forget about an outfit I suggested?"), "outfits_remove_outfit"),
+        (__("Can you search again for new items?"), "outfits_reload")],
+        (__("Go back"), None),
         400,
         "mod_assets/icons/outfits.png")
 
     if isinstance(_return, basestring):
-        $ jnShowNatsukiIdle(jn_center)  
+        $ jnShowNatsukiIdle(jn_center)
         $ push(_return)
         jump call_next_topic
 
@@ -860,17 +860,17 @@ label try_force_quit:
 
         # Standard quit behaviour
         if Natsuki.isAffectionate(higher=True):
-            n 2ccsem "W-{w=0.2}wait,{w=0.5}{nw}" 
+            n 2ccsem "W-{w=0.2}wait,{w=0.5}{nw}"
             extend 2knmflsbl " what?{w=0.75}{nw}"
             extend 5clrunlsbl " Can you at {i}least{/i} say goodbye first,{w=0.2} [player]?"
 
         elif Natsuki.isNormal(higher=True):
-            n 4kskem "H-{w=0.2}hey!{w=0.75}{nw}" 
-            extend 4kllflsbl " Y-{w=0.2}you aren't just going to leave like that,{w=0.5}{nw}" 
+            n 4kskem "H-{w=0.2}hey!{w=0.75}{nw}"
+            extend 4kllflsbl " Y-{w=0.2}you aren't just going to leave like that,{w=0.5}{nw}"
             extend 4ksqunsbl " are you?"
 
         elif Natsuki.isDistressed(higher=True):
-            n 2fsqpu "...Really?{w=0.75}{nw}" 
+            n 2fsqpu "...Really?{w=0.75}{nw}"
             extend 2fcsupsbr " I don't even get a 'goodbye' now?"
 
         else:

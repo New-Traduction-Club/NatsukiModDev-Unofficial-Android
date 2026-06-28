@@ -1855,20 +1855,20 @@ init -100 python in jn_utils:
         Natsuki may use these at higher levels of affinity to tease her player with.
         """
         return random.choice([
-            "dummy",
-            "you big dummy",
-            "silly",
-            "stupid",
-            "you dork",
-            "you big dork",
-            "you goof",
-            "you goofball",
-            "you numpty",
-            "you donut",
-            "you dope",
-            "you big dork",
-            "you big goof",
-            "you big dope"
+            __("dummy"),
+            __("you big dummy"),
+            __("silly"),
+            __("stupid"),
+            __("you dork"),
+            __("you big dork"),
+            __("you goof"),
+            __("you goofball"),
+            __("you numpty"),
+            __("you donut"),
+            __("you dope"),
+            __("you big dork"),
+            __("you big goof"),
+            __("you big dope")
         ])
 
     def getRandomTeaseName():
@@ -1877,11 +1877,11 @@ init -100 python in jn_utils:
         Natsuki may use these at higher levels of affinity to tease her player with.
         """
         return random.choice([
-            "dummy",
-            "dork",
-            "goof",
-            "donut",
-            "dope"
+            __("dummy"),
+            __("dork"),
+            __("goof"),
+            __("donut"),
+            __("dope")
         ])
 
     def getRandomEndearment():
@@ -1890,13 +1890,13 @@ init -100 python in jn_utils:
         Natsuki may use these at the highest levels of affinity to refer to her player - she isn't that lovey-dovey, so use sparingly!
         """
         return random.choice([
-            "babe",
-            "darling",
-            "dummy",
-            "hun",
-            "my love",
-            "sweetheart",
-            "sweetie"
+            __("babe"),
+            __("darling"),
+            __("dummy"),
+            __("hun"),
+            __("my love"),
+            __("sweetheart"),
+            __("sweetie")
         ])
 
     def getRandomDescriptor():
@@ -1905,12 +1905,12 @@ init -100 python in jn_utils:
         Natsuki may use these at the highest levels of affinity to describe her player when she is being sentimental.
         """
         return random.choice([
-            "amazing",
-            "awesome",
-            "really awesome",
-            "really great",
-            "so sweet",
-            "the best"
+            __("amazing"),
+            __("awesome"),
+            __("really awesome"),
+            __("really great"),
+            __("so sweet"),
+            __("the best")
         ])
 
     def getRandomInsult():
@@ -1919,12 +1919,12 @@ init -100 python in jn_utils:
         Natsuki may use these at the lowest levels of affinity to insult her player with.
         """
         return random.choice([
-            "jerk",
-            "idiot",
-            "moron",
-            "stupid",
-            "loser",
-            "you ass"
+            __("jerk"),
+            __("idiot"),
+            __("moron"),
+            __("stupid"),
+            __("loser"),
+            __("you ass")
         ])
 
     def getRandomHappyEmoticon():
