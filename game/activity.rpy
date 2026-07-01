@@ -537,13 +537,30 @@ init python in jn_activity:
 
     def notifyPopup(message):
         """
-        Displays a toast-style popup (Windows and Linux only).
+        Displays a toast-style popup (Windows, Linux and Android only).
 
         IN:
             - title - The title to display on the window
             - message - The message to display in the window
         """
-        if renpy.windows or renpy.linux:
+        if renpy.android:
+            try:
+                from jnius import autoclass
+                class_name = 'org.renpy.android.NotificationWorker'.encode('utf-8')
+                NotificationWorker = autoclass(class_name)
+
+                NotificationWorker.showDesktopNotification(
+                    "Natsuki",
+                    message,
+                    (renpy.config.gamedir + '/mod_assets/jnlogo.ico')
+                )
+            except Exception as e:
+                try:
+                    Log = autoclass('android.util.Log')
+                    Log.e("RenPyNotification", "Failed to trigger desktop notification: " + str(e))
+                except:
+                    print("Error:", e)
+        elif renpy.windows or renpy.linux:
             notification.notify(
                 title="Natsuki",
                 message=message,
